@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab菜单</title>
+    <style>
+        ul{
+            padding:0;
+            margin:0;
+        }
+        ul li{
+            float:left;
+            background-color:grey;
+            color:white;
+            margin:0px;
+            padding:8px;
+        }
+        .clearfix:after{display:block;content:'';height:0px;visibility:hidden;clear:both;}
+        .tab-menu .title{background-color:grey;}
+        .tab-menu .content{border:1px solid grey;min-height:150px;}
+        .hide{display:none;}
+        .tab-menu .title .active{background-color:white;color:black;}
+    </style>
+</head>
+<body>
+    <div style="width:400px;margin:0 auto;">
+        <div class="tab-menu">
+            <div class="title clearfix">
+                    <ul style="list-style:none;cursor:pointer;">
+                    <li target="h1" onclick="Show(this);">价格趋势</li>
+                    <li target="h2" onclick="Show(this);">市场分布</li>
+                    <li target="h3" onclick="Show(this);">其它</li>
+                </ul>
+            </div>
+            <div class="content">
+                <div content="h1">content1</div>
+                <div content="h2" class="hide">content2</div>
+                <div content="h3" class="hide">content3</div>
+            </div>
+        </div>
+    </div>
+<script>
+    function Show(arg){
+        //arg表示当前标签
+        var target = arg.getAttribute('target');
+        //给自己添加active样式类，
+        arg.className = 'active';
+        var brothers = arg.parentElement.children;
+        for(var i=0;i<brothers.length;i++){
+            if(arg == brothers[i]){
+            }else{
+                brothers[i].removeAttribute('class');
+            }
+        }
+        var contents = document.getElementsByClassName('content')[0].getElementsByTagName('div');
+        for(var j=0;j<contents.length;j++){
+            var content = contents[j];
+            if(content.getAttribute('content') == target){
+            content.removeAttribute('class');}else{
+            content.setAttribute('class','hide');
+            }
+        }
+    }
+</script>
+</body>
+</html>

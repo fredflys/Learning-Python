@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>each和return</title>
+</head>
+<body>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        <!--each中return时，和外层函数f1没有关系-->
+        <!--循环中单写一个return，只是退出当次的循环，对下一次循环没有影响-->
+        <!--原因是each本身是一个循环，其内部定义了 -->
+        <!--$each中return false表示each退出-->
+        function f1(){
+            var li = [11,22,33];
+            $.each(li,function(k,v){console.log(k,v);
+            if(k==1){return;}});
+            console.log('end');
+        }
+        f1();
+    </script>
+</body>
+</html>

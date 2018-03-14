@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form验证</title>
+</head>
+<body>
+<input type="button" value="Ajax请求" onclick="DoAjax();">
+<input type="button" value="跨域Ajax请求" onclick="DoAjaxBeyond();">
+<br>
+<input type="button" value="跨域请求解决:jsonp" onclick="Jsonp();"/>
+<input type="button" value="JqueryJsonP" onclick="JqueryJsonp();"/>
+<br><br>
+<input type="button" value="Jsonp实例演示：通过接口获得电视节目表" onclick='GetProgramListByJsonp();'>
+<br><br>
+<input type="button" value="CORS演示-简单请求" onclick="SimpleCors();"/>
+<input type="button" value="CORS演示-复杂请求" onclick="ComplexCors();"/>
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script>
+    function DoAjax(){
+        $.ajax({
+            url: '/index',
+            type: 'post',
+            data: {'k1':'v1'},
+            success: function(callback){
+                alert(callback);
+            }
+        })
+    }
+
+    function DoAjaxBeyond(){
+            $.ajax({
+            url: 'http://127.0.0.1:8002/index',
+            type: 'post',
+            data: {'k1':'v1'},
+        })
+    }
+
+    function Jsonp(){
+        var tag = document.createElement('script');
+        document.head.appendChild(tag);
+        tag.src = 'http://127.0.0.1:8002/index?code=123';
+        document.head.removeChild(tag);
+    }
+
+    function ClientFunc(callback){
+        alert('我是本地执行的函数，从服务端拿到的数据是：\n序号:' + callback.num + '\n内容:' + callback.message);
+    }
+
+    function JqueryJsonp(){
+       $.ajax({
+        url:'http://127.0.0.1:8002/index?code=3',
+        // 只要有该属性，自动帮我们做上面JsonP的方法
+        dataType:'jsonp',
+        //传递给目标页面时，加带的参数名，一般为callback,形如?xxx=
+        jsonp:'callback',
+        //为 jsonp 请求指定一个回调函数名。这个值将用来取代 jQuery 自动生成的随机函数名
+        //传递给目标页面时，加带参数的值，如果与服务端返回的函数名不一致，即使成功获取数据，也会认为jsonp请求失败，并进入error属性的方法
+            jsonpCallback:'ClientFunc',
+        // 从服务端获得json后，会执行本地相应的方法
+        // success是jsonp请求成功后执行的方法
+        success:function(){
+            alert('Jquery jsonp成功啦!');
+        },
+        error:function(){
+            alert('Jquery jsonp失败啦!');
+        }
+       })
+    }
+
+
+
+    function GetProgramListByJsonp(){
+        $.ajax({
+            url:'http://www.jxntv.cn/data/jmd-jxtv2.html',
+            dataType:'jsonp',
+            jsonp:'callback',
+            jsonpCallback:'list',
+            success:function(){
+                alert('已经获得节目表，请在console查看');
+            },
+            error:function(){
+                alert('获取失败');
+            },
+        });
+    }
+    function list(dict){
+        var programs = dict['data'];
+        for(var i=0;i<programs.length;i++){
+            var day_info = programs[i];
+            var day_str = day_info['week'];
+            var pms_array = day_info['list'];
+            for(var k=0;k<pms_array.length;k++){
+                var pro_dict = pms_array[k];
+                var time = pro_dict['time'];
+                var new_time = time.slice(0,2) + ':' + time.slice(2,4)
+                var name = pro_dict['name'];
+                var link = pro_dict['link'];
+                console.log(day_str,new_time,name,link);
+            }
+        }
+    }
+
+
+    function SimpleCors() {
+        $.ajax({
+             url:'http://127.0.0.1:8002/cors',
+             type:'post',
+             data:{'title':'content'},
+             success:function(callback){
+                alert(callback);}
+        });
+        }
+
+    function ComplexCors() {
+        $.ajax({
+             url:'http://127.0.0.1:8002/cors',
+             type:'put',
+             /* 这里是headers，而不是header */
+             headers:{'k':'v'},
+             data:{'title':'content'},
+             /* 该属性用来控制ajax请求是否携带cookie */
+             xhrFields:{withCredentials: true},
+             success:function(callback){
+                alert(callback);}
+        });
+    }
+
+
+</script>
+</body>
+</html>

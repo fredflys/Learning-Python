@@ -1,0 +1,33 @@
+跨域Ajax请求
+    跨域名请求，浏览器默认不允许
+    跨域请求其实是可以跨过去的，浏览器也接收到了返回数据，但是浏览器会在接收后
+    认为跨域的这个请求违反了同源策略，便予以了拦截
+    同源策略并不是十分严格的，对于XHR进行的Ajax请求是禁止的，
+    但对于具有src属性的块可以跨域
+
+    突破限制：
+    1.JSONP(Javascript Object Notation with Padding)
+        耍小聪明的办法
+        动态地创建script块，将ajax请求包裹在scr属性中
+    2.CORS（Cross Origin Resource Sharing)
+        跨域资源共享
+        说服浏览器，让它接收（这种方法还比较新，只有最新的浏览器支持）
+        服务端返回数据时，加上额外的响应头，作为表示
+        简单请求
+            请求头类型：HEAD GET POST
+            请求头信息：
+            Accept
+            Accept-language
+            Last-Event-ID
+            Content-Type:application/x-www-form-urlencoded
+                     或者multipart/form-data
+                     或者text/plain
+           同时满足以上两个条件
+           一次请求，服务器端给加个响应头返回内容就好了
+        非简单请求（预检）
+            预检会先发送一条方法为OPTIONS的请求
+
+MySQL数据库
+
+pymysql
+

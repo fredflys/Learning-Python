@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性操作和正选反选实例</title>
+</head>
+ <!--$("p").text() .html() .removeAttr("checked") .prop() .addClass-->
+    <!--$(":checkbox").val()  表单元素一般都有value属性-->
+    <!--$(".test").attr("checked")-->
+<body>
+    <input id="check1" type="checkbox" val="donneknow"/>
+    <input id="check2" type="checkbox" checked="true"/>
+    <p id="i1" class="c1">hello</p>
+    <p>hello</p>
+
+
+    <table>
+        <tr>
+            <td><input type="checkbox">云母屏风烛影深</td>
+        </tr>
+                <tr>
+            <td><input type="checkbox">云母屏风烛影深</td>
+        </tr>
+                <tr>
+            <td><input type="checkbox">嫦娥应悔偷灵药</td>
+        </tr>
+                <tr>
+            <td><input type="checkbox">嫦娥应悔偷灵药</td>
+        </tr>
+    </table>
+    <button onclick="CheckAll();">全选</button>
+    <button onclick="UncheckAll();">取消</button>
+    <button onclick="ReverseCheck();">反选</button>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    <!--和DOM操作想比，更加简易，因为可以直接遍历所有p标签，修改其内容，而js还需要写一个for循环，处理取到的所有p标签-->
+    $("p").text("Bye");
+
+    <!--修改class属性为cc，以键值对修改-->
+    $("#i1").attr("class","cc");
+    $("#check2").attr("checked");
+    $("#check2").removeAttr("val");
+    <!--.prop也是设置属性-->
+
+    function CheckAll(){
+        $("td input").prop("checked",true);
+    }
+
+    function UncheckAll(){
+        $("td input").prop("checked",false);
+    }
+
+
+    function ReverseCheck(){
+        <!--each是 jquery中的循环方式-->
+        <!--之后对每一个元素调用括号中的匿名函数，很典型的用法，在诸多别的编程语言中也有类似用法-->
+        $("table :checkbox").each(function(){
+            if ($(this).prop("checked")){$(this).prop("checked",false)}
+            else{$(this).prop("checked",true)}
+        })
+    }
+</script>
+
+</body>
+</html>

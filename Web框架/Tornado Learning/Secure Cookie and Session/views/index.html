@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Cookie</h1>
+<script>
+    <!--根据用户输入设置cookie，时间单位可以是yMdhms,格式是数字+对应字母-->
+    <!--也可以针对不同单位的时间分开写方法，我这里整合为了一种方法，顺便复习了js的字符串操作方法以及switch语法-->
+    function setCookie(name,value,expires){
+        var current_date = new Date();
+        if(typeof(expires) == 'string'){
+            var unit = expires.charAt(expires.length-1);
+            var str_num = expires.slice(0,expires.length-1);
+            var num = parseInt(str_num);
+            if('yMdhms'.includes(unit) && num){
+                switch(unit){
+                    case 'y':
+                        current_date.setDate(current_date.getDate() + num * 365);
+                    case 'M':
+                        current_date.setDate(current_date.getDate() + num * 30);
+                    case 'd':
+                        current_date.setDate(current_date.getDate() + num);
+                    case 'h':
+                        current_date.setSeconds(current_date.getSeconds() + num * 60 * 60);
+                    case 'm':
+                        current_date.setSeconds(current_date.getSeconds() + num * 60);
+                    case 's':
+                        current_date.setSeconds(current_date.getSeconds() + num);
+                }
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+        document.cookie = name + "=" + value + ";expires=" + current_date.toUTCString();
+        return true;
+    }
+
+</script>
+</body>
+</html>

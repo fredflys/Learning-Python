@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑框</title>
+</head>
+<body>
+    <div>
+    <input type="button" value="全选" onclick="CheckAll();"/>
+    <input type="button" value="反选" onclick="UncheckAll();"/>
+    <input type="button" value="取消"/>
+    <p style="display:inline-block;margin-left:30px;padding:10px;background-color:#ddd;color:black;cursor:pointer;" onclick="EditMode(this);">进入编辑模式</p>
+    </div>
+    <table border="1px">
+        <thead>
+            <tr>
+            <th>选择</th>
+            <th>主机名</th>
+            <th>端口</th>
+            <th>状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Host First</td>
+                <td>01</td>
+                <td>在线</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td>Host First</td>
+                <td>01</td>
+                <td>在线</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>Host First</td>
+                <td>01</td>
+                <td>在线</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td>Host First</td>
+                <td>01</td>
+                <td>在线</td>
+            </tr>
+        </tbody>
+    </table>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    <!--attr方法在处理checkbox属性时似乎有些问题，会无法二次赋值 -->
+    <!--第一次修改时，还能成功，再读取并尝试修改时，虽不会报错，但行为和预料的不同-->
+    <!--遇到checkbox时还是尽量用prop方法吧-->
+    <!--根据官方的建议：具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()-->
+    function CheckAll(){
+        $("tr").find("input[type=checkbox]").each(function(){
+            $(this).prop("checked",true);
+        })
+    }
+
+    function UncheckAll(){
+        $("tr").find("input[type=checkbox]").each(function(){
+            if($(this).prop("checked") == true){
+                $(this).prop("checked",false);
+            }else{
+                $(this).prop("checked",true);
+            }
+        })
+    }
+
+    function EditMode(arg){
+        <!--这里不能再用#ddd，如果输出该属性的值，就能发现#ddd对应的是下面的字符串-->
+        if($(arg).css("background-color") == "rgb(221, 221, 221)" ){
+           $(arg).css("background-color", "orange");
+        }else{
+           $(arg).css("background-color","rgb(221, 221, 221)");
+        }
+    }
+
+
+</script>
+</body>
+</html>

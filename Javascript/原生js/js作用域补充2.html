@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    <!--自执行的匿名函数-->
+    (function(a){
+        alert(a);
+    })(123);
+
+    function func(){
+        for(var i=0;i<3;i++){
+            <!--其实计时器这里传入的是函数传入i后的返回值-->
+            setInterval((function(arg){
+                alert(arg);
+            })(i),1000);
+        }
+    }
+    <!--函数会依次返回0，1，2-->
+    <!--因为每次循环其实都执行了函数，-->
+    func();
+</script>
+</body>
+</html>

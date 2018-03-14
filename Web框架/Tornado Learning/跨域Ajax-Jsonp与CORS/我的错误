@@ -1,0 +1,42 @@
+function list(dict){
+        // 拿到json格式的节目表后，我首先先动态地生成表格
+        // 并生成tr和td标签
+        // 将节目日期、时间、内容、链接写入表格中，最后再将表格append到body标签
+        // 可惜这样行不通，函数执行后，浏览器直接假死，后来崩溃
+        var table = document.createElement('table');
+        var tr = document.createElement('tr');
+        var td = document.createElement('td');
+        for(var i=0;i<4;i++){
+            // appendChild其实是剪切一个节点到另一个节点的子节点中，并放到最后一个
+            // 因此重复调用该方法并不是不断地在后面添加新节点，而是不断在同一个文件夹内剪切粘贴新文件
+            tr.appendChild(td.cloneNode());
+        }
+        tr.firstChild.innerHTML = '日期';
+        tr.firstChild.nextSibling = '时间';
+        tr.firstChild.nextSibling.nextSibling = '内容';
+        tr.lastChild = '链接';
+        table.appendChild(tr);
+        var programs = dict['data'];
+        for(var i=0;i<programs.length;i++){
+            var day_info = programs[i];
+            var day_str = day_info['week'];
+            var pms_array = day_info['list'];
+            for(var k=0;k<pms_array.length;k++){
+                var pro_dict = pms_array[k];
+                var time = pro_dict['time'];
+                var new_time = time.slice(0,2) + ':' + time.slice(2,4)
+                var name = pro_dict['name'];
+                var link = pro_dict['link'];
+                var _tr = document.createElement('tr');
+                for(var i=0;i<4;i++){
+                    _tr.appendChild(td.cloneNode());
+                }
+                _tr.firstChild.innerHTML = day_str;
+                _tr.firstChild.nextSibling = new_time;
+                _tr.firstChild.nextSibling.nextSibling = name;
+                _tr.lastChild = link;
+                table.appendChild(_tr);
+            }
+        }
+        document.body.appendChild(table);
+    }

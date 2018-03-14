@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery入门</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+</head>
+<body>
+    <p>ABCDEF</p>
+    <div id="i1">BCDEFG
+
+    </div>
+    <div class="c1" id="i1.5">Class
+        <div class="c2">小弟</div>
+    </div>
+
+    <div id="i2">一起变</div>
+    <div id="i3">一起变</div>
+    <ul>
+        <li>第一项</li>
+        <li>第二项</li>
+    </ul>
+
+    <table>
+        <tr>
+            <td>
+              1.1
+            </td>
+            <td>
+              1.2
+            </td>
+        </tr>
+        <tr>
+            <td>
+              2.1
+            </td>
+            <td>
+              2.2
+            </td>
+        </tr>
+        <tr>
+            <td>
+              3.1
+            </td>
+            <td>
+              3.2
+            </td>
+        </tr>
+    </table>
+
+    <form>
+        <input type="text"/>
+        <input type="checkbox">
+    </form>
+    <script>
+    <!--基本选择器-->
+        $("p").css("color","red");
+        $("#i1").text('12345');
+        $('.c1').css('background','yellow');
+        <!--会将body下级的所有标签的文本变为一样-->
+        <!--$('body *').text('boooooody');-->
+    <!--层级选择器-->
+        $('.c1 .c2').css('color','red');
+        $('#i2,#i3').css('background-color','grey');
+    <!--基本筛选器-->
+       $('ul li:first').text('改变后的第一项');
+       $('ul li:first').text('改变后的第一项');
+       $('tr:even').css('background-color','green');
+       $('td:eq(2)').css('background-color','blue');
+       $(':checkbox').css('backgound-color','green');
+    </script>
+</body>
+</html>

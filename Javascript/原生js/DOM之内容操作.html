@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>内容操作</title>
+</head>
+<body>
+    <a href="http://store.steampowered.com/">前尘往事断肠诗<span>欢乐趣</span></a>
+    <a href="http://www.baidu.com/">侬为君痴君不知</a>
+    <input id="t" type="text" class="tc hide"/>
+    <select id="s">
+        <option value="1">君应有语</option>
+        <option value="2">渺万里层云</option>
+        <option value="3">千山暮雪</option>
+        <option value="4">只影向谁去</option>
+    </select>
+    <script>
+        var a = document.getElementsByTagName('a')[0];
+        console.log(a.innerText);
+        console.log(a.innerHTML);
+
+        //通过value来获取表单的值
+        document.getElementById('t').vlaue  //随着用户的输入而改变
+        document.getElementById('s').value  //随着用户的选择而变动
+        document.getElementById('t').classList
+        document.getElementById('t').classList.remove('hide')
+        document.getElementById('t').classList.add('added')
+    </script>
+</body>
+</html>

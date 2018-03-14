@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>标签样式操作</title>
+</head>
+<body>
+   <div>
+       <input type="text"  />
+       <input type="button" value="添加" onclick="AddInput(this);"/>
+       <input type="button" value="清除" onclick="Remove();"/>
+   </div>
+   <div>
+       <ul id="list" style="list-style:none;">
+           <li>相逢情便深</li>
+           <li>恨不相逢早</li>
+       </ul>
+   </div>
+<script>
+    //var i1 = docuement.getElementById('i1');
+    //i1.style.color = 'red';
+    //i1.style.backgroundColor = 'black';
+    function AddInput(arg){
+        //获取输入的值
+        var input_text = arg.previousElementSibling.value;
+        arg.previousElementSibling.value = '';
+        var list = document.getElementById('list');
+        //第一种方式：原生字符串形式
+        var str = "<li>" + input_text + "</li>";
+        list.insertAdjacentHTML("beforeEnd",str);
+        //第二种方式：节点/元素
+        var tag = document.createElement('li');
+        tag.innerText = input_text;
+        list.appendChild(tag);
+        list.insertBefore(tag,list.children[0]);
+
+    }
+    function Remove(){
+
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form验证</title>
+    <style>
+        .inputs_1{margin-left:36px;}
+        .inputs_2{margin-left:50px;}
+        .inputs_3{margin-left:18px;}
+    </style>
+</head>
+<body>
+    <form action="/index" method="post" enctype="multipart/form-data">
+        IP地址<input type="text" name="ip" class="inputs_1"><br>
+
+        邮箱<input type="text" name="email" class="inputs_2"><br>
+        手机号码<input type="text" name="phone" class="inputs_3"><br>
+        <p>
+            <input type="checkbox" name="game" value="1">马里奥
+            <input type="checkbox" name="game" value="2">塞尔达
+            <input type="checkbox" name="game" value="3">星之卡比
+        </p>
+        <input type="file" name="files"/>
+        <input type="file" name="files"/>
+        <br>
+        <input type="submit" value="提交">
+    </form>
+
+</body>
+</html>

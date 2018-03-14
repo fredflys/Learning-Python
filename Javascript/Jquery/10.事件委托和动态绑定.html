@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+     <!--$(document).ready(function(){}) ----------------> $(function(){})-->
+        $(function(){
+            <!--为前几个li绑定事件后，往后再点击按钮后添加标签不会有原来的效果，因为是动态生成的-->
+            $("li").click(function(){
+                alert("123");
+            })
+            <!--事件委托,将一系列的标签所绑定的事件委托给一个标签 三个参数：标签，事件，动作（处理事件），批量绑定时比较方便-->
+            $("ul").delegate("li","click",function(){alert("Delegate action.")});
+
+            $("button").click(function(){
+            $("ul").append("<li>aaa</li>");
+        })
+
+        }
+
+        )
+                 <!--$("#al").bind(click,function(){alert("alert")});-->
+
+    </script>
+</head>
+<body>
+    <ul>
+        <Li>12345</Li>
+        <Li>12345</Li>
+        <Li>12345</Li>
+        <Li>12345</Li>
+        <Li>12345</Li>
+        <Li>12345</Li>
+    </ul>
+    <button id="add">ADD</button>
+    <button id="al">Alert</button>
+</body>
+</html>

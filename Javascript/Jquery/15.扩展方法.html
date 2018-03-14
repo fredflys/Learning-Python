@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>扩展</title>
+</head>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    $(function(){
+        $.fn.extend({
+            hello:function(){return $(this).text();}
+        })
+        var index = $('.title').hello();
+        alert(index)
+    })
+    $('xcx').show()
+</script>
+<body>
+    <div class="title">111</div>
+    <div class="title">222</div>
+    不要在jquery内对其进行扩展，通过extend方法，在内部用键值对jquery进行扩展
+</body>
+</html>

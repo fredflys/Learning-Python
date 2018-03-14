@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>抽屉热搜榜</title>
+    <link rel="stylesheet" href='{{ static_url("css/commons.css") }}' type="text/css" />
+    <link rel="stylesheet" href='{{ static_url("plugins/bootstrap/css/bootstrap.css") }}'
+</head>
+<body>
+    <div class="head">
+        <div class="head-content">
+            <div class="logo"></div>
+            <div class="nav">
+                <a>全部</a>
+                <a>42区</a>
+                <a>段子</a>
+                <a>图片</a>
+                <a>挨踢1024</a>
+                <a>你问我答</a>
+            </div>
+            {% if userinfo['is_login'] %}
+            <div class="login">
+                <a>动态</a>
+                <a>通知</a>
+                <a style="color:orange;">{{ userinfo['username'] }}</a>
+            </div>
+            {% else %}
+            <div class="login">
+                <a onclick="Login();">登陆</a>
+                <a>注册</a>
+            </div>
+            {% end %}
+            <div class="search">
+                <input type="text">
+                <a href=""><span></span></a>
+            </div>
+        </div>
+    </div>
+    <div class="middle">
+        <div class="middle_content">
+        <div class="left">
+            <div class="top">
+                <div class="child-nav">
+                    <a class="active" href>最新</a>
+                    <a href>发现</a>
+                    <a href>人类发布</a>
+                </div>
+                <div class="sort">
+                    <a class="ji" href>即时排序</a>
+                    <a href>24小时</a>
+                    <a href>3天</a>
+                    <a onclick="Publish();">发布</a>
+                </div>
+                <div>
+                    <a class="publish" href>
+                        <span id="jia"></span>
+                        <!--这里无论怎样尝试，模态框都会闪退-->
+                        <span id="fa" onclick="Login();" >发布</span>
+                    </a>
+                </div>
+            </div>
+            <div class="content">
+            {% for news in newslist %}
+                 <div class="item">
+                    <div class="content_left">
+                        <span class="part1">
+                            <a href="#" id ="title" style="color:red;">
+                                {{ news['title'] }}
+                            </a>
+                            <br>
+                            <a href="#" target="_blank">
+                             {{ news['content'] }}
+                            </a>
+                        </span>
+                        <span class="part1 laizi">
+                            来自
+                            <a href>iPhone</a>
+                        </span>
+                    </div>
+                    <div class="part2">
+                        <a class="hand" href>
+                            <span></span>
+                            <b>44</b>
+                        </a>
+                        <a class="xinxi" href>
+                            <span></span>
+                            <b>12</b>
+                        </a>
+                        <a class="wenzi" href>
+                            <span class="shou"></span>
+                            <b>私藏</b>
+                        </a>
+                        <a class="wenzi" id="user" href>
+                            <span></span>
+                            <b>从善如流马歇尔</b>
+                        </a>
+                        <a id="ru" href>
+                            <b>5分钟前</b>
+                        </a>
+                        <i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <a class="sina" href></a>
+                            <a class="douban" href></a>
+                            <a class="qqzone" href></a>
+                            <a class="renren" href></a>
+                        </span>
+                    </div>
+                    <div class="content_right">
+                        <img src="images/right.jpg"/>
+                    </div>
+                </div>
+            {% end %}
+            </div>
+            <div>
+                <div class="page">
+                    <ul>
+                        <li class="page1"><span>1</span></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href class="pagepa">2</a></li>
+                        <li><a href id="page_edge">下一页</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div>
+                <a class="report_1" href>
+                    <img src="/images/report.png">
+                </a>
+            </div>
+            <div>
+                <a class="report_2" href>
+                    <img src="images/report_children.png" alt>
+                </a>
+            </div>
+        </div>
+        </div>
+    </div>
+
+<!--登陆用bootstrap模态对话框-->
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">用户登陆</h4>
+      </div>
+      <form action="/login" method="post">
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">用户名:</label>
+            <input type="text" class="form-control" id="recipient-name" name="usn">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">密码:</label>
+            <input class="form-control" type="password" id="message-text" name="pwd" />
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">登陆</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--发布用bootstrap模态对话框-->
+<div class="modal fade" id="pub" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">发布新闻</h4>
+      </div>
+      <form action="/publish" method="post">
+      <div class="modal-body">
+          <div class="form-group">
+            <label for="recipient-name" class="control-label">标题:</label>
+            <input type="text" class="form-control" name="title">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="control-label">内容:</label>
+            <textarea class="form-control" name="content"></textarea>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" class="btn btn-primary">发布</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src='{{  static_url("js/jquery-3.2.1.min.js") }}'></script>
+<script src='{{  static_url("plugins/bootstrap/js/bootstrap.js") }}'></script>
+<script>
+    $(function(){
+
+    })
+
+    function Login(){
+        $('#login').modal('show');
+    }
+    function Publish(){
+        $('#pub').modal('show');
+    }
+</script>
+</body>
+</html>

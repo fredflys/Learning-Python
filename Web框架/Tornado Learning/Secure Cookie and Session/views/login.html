@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/check_code" method="post">
+        {% raw xsrf_form_html() %}
+        <p>用户名<input name="usn" type="text"></p>
+        <p>密码<input name="pwd" type="text"></p>
+        <p>
+                验证码<input name="cap_code" type="text">
+            <img src="/check_code" id="imgCode" onclick="ChangeCap();"/>
+        </p>
+        <input type="submit" value="提交"/>
+        {% raw wrong_captcha %}
+    </form>
+    <br>
+
+    <form  action="/csrf" method="post">
+        {% raw xsrf_form_html() %}
+    <input type="submit" value="CSRF">
+    </form>
+
+    <input type="button" value="Ajax CSRF" onclick="SubmitCsrf();">
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        {% raw xsrf_form_html() %}
+    <input type="file" multiple="" name="Files" ">
+    <input type="submit" value="上传" style="display:hidden;">
+    </form>
+<script src="/static/jquery-3.2.1.min.js"></script>
+<script>
+    function ChangeCap(){
+        var code = document.getElementById("imgCode");
+        code.src += '?';
+    }
+    function GetCookie(name){
+        <!--cookie是字符串，形如："k1=v1; k2=v2;"-->
+        <!--要提取字符串中特定部分的值，用正则最为简便-->
+        <!--先用\b匹配到单词起始位置（0宽度），传入键值，后面接1个等号，用小括号-->
+        <!--圈起一个单词（到下一个空格为止，空格分开了一个个单词），限定不是分号的字符（^在字符集[]中表示反向字符集）-->
+        <!--并重复0次或多次，直到单词结尾，勾选的限定范围，就是我们要的键对应值-->
+        <!--或者说匹配=号和单词结尾，中间就是我们要的键值（也就是小括号限定的部分）-->
+        <!--js字符串的 match方法：-->
+        <!--没有匹配的文本，返回null，否则返回一个数组-->
+        <!--第0个元素存放的是匹配文本，其余元素存放的是与正则子表达式匹配的文本-->
+        var v = document.cookie.match("\\b" + name + "=([^;]*)\\b");
+        console.log(v);
+        return v ? v[1] : undefined;
+    }
+    function SubmitCsrf(){
+        var xsrf_value = GetCookie('_xsrf');
+        alert(xsrf_value);
+        $.post({
+            url:'/csrf',
+            data:{'k1':'v1','_xsrf': xsrf_value},
+            success:function(callback){
+                alert(callback);
+            }
+        });
+    }
+
+</script>
+</body>
+</html>

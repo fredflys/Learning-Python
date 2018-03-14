@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="usn" name="usn"/>用户名
+<input type="text" id="pwd" name="pwd"/>密码
+<input type="button" onclick="Publish();" value="提交">
+<script src="static/js/jquery-3.2.1.min.js"></script>
+<script>
+
+    function Publish(){
+    $.post('original.html', {'usn':$('#usn').val(),'pwd':$('#pwd').val()},function(){
+        alert(123);
+    })}
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery实现Ajax</title>
+</head>
+<body>
+    <input type="text" id="usn" name="username"/>
+    <input type="text" id="pwd" name="password"/>
+    <input type="checkbox" id="checked" name="auto" value="1" >7天免登陆
+    <input type="button" value="登陆" onclick="SubmitForm();"/>
+    <p>
+
+    </p>
+    <script src="{{ static_url('js/jquery-3.2.1.min.js') }}"></script>
+    <script>
+        function SubmitForm(){
+            $.post('/jquerylogin', {'username':$('#usn').val(),'password':$('#pwd').val()}, function (callback){
+                var ret_dic = JSON.parse(callback);
+                <!--这里只是为了展示status属性的用法，所以加上了多余的判断-->
+                if(ret_dic.status){
+                    alert(ret_dic.message);
+                }else{
+                    alert(ret_dic.message);
+                }
+            })
+        }
+    </script>
+</body>
+</html>

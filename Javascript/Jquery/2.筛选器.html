@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>筛选器</title>
+    <script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>十年生死两茫茫</li>
+        <li>不思量</li>
+        <li>自难忘</li>
+    </ul>
+
+
+
+    <div class="outer">外层
+        <div class="d0">内层0
+            <div class="d0-1">内层0的内层1</div>
+            <div class="d0-2">内层0的内层2</div>
+            <div class="d0-3">内层0的内层3</div>
+        </div>
+        <div class="d1">内层1
+            <div class="d1-1">内层1的内层
+                <div class="d1-1-1">
+                    内层1的内层1的内层
+                </div>
+            </div>
+        </div>
+        <div class="d2">
+            内层2
+            <div class="d2-1">
+                内层2的内层
+            </div>
+        </div>
+        <div class="d3">内层3
+        </div>
+        <div class="d4">内层4</div>
+    </div>
+<script>
+    <!--因为这里1在字符串内，如用变量表示，在内部引入时要加入括号进行拼接-->
+    $("li:eq(1)").css("color","red");
+    <!--筛选器用起来更方便，不用拼接，eq方法内直接传入变量名即可-->
+    $("li").eq(2).css("fontSize","20px ");
+    <!--children方法只会返回儿子级别的标签，而find则会迭代查找每层，找出所有子级标签-->
+    <!--nextUntil方法掐头去尾-->
+    console.log($(".d1").nextUntil(".d4")[0]);
+    <!--父级标签会和子级标签一起生效-->
+    $(".d1-1-1").parent().css("color","green");
+    $(".d2-1").parentsUntil(".outer").css("color","purple");
+    <!--筛选出d1之后的所有div兄弟，即2，3，4，不包括0-->
+    $(".d1~div").css("fontSize","30px");
+    $(".d0-2").siblings().css("color","grey");
+</script>
+</body>
+</html>

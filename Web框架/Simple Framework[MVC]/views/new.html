@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>同步滚动菜单</title>
+</head>
+<style>
+    body{margin:0;background-color:#dddddd;}
+    .pg-header{
+        background-color:black;
+        height:50px;
+    }
+    .pg-body{
+        background-color:#dddddd;
+    }
+    .pg-body .fixed{position:fixed;top:10px;}
+    .menu{
+        float:left;
+        background-color:white;
+        position:absolute;
+        left:200px;
+        width:180px;
+        }
+    .menu .active{background-color:#425a66;}
+    .content{
+        float:left;
+        background-color:white;
+        position:absolute;
+        left:385px;
+        right:200px;
+    }
+    .content .item{
+        height:900px;
+        width:400px;
+    }
+</style>
+<body onscroll="Scroll();">
+    <div class="pg-header">
+    </div>
+    <div class="pg-body">
+        <div id='m' class="menu">
+            <ul style="list-style:none;">
+                <li>第一章</li>
+                <li>第二章</li>
+                <li>第三章</li>
+            </ul>
+        </div>
+        <div id="icontent"class="content">
+            <div class="item">你若无心我便休，青山只认白云俦。 </div>
+            <div class="item">飞泉落韵怡然夏，飘叶成诗好个秋。 </div>
+            <div class="item">十五情形怜月冷，三千愿望对星流。 </div>
+        </div>
+    </div>
+<script>
+    function Scroll(){
+        var scrollHeight = document.documentElement.scrollTop;
+        var menuNode = document.getElementById('m');
+        if(scrollHeight>48){
+            menuNode.classList.add('fixed');
+        }else{
+            //滚回时要消除fixed，否则就会因为固定在坐上角而与标题栏重合
+            menuNode.classList.remove('fixed');
+        }
+        var items = document.getElementById('icontent').children;
+        for(var i=0;i<items.length;i++){
+            var currentItem = items[i];
+            var currentItemBodyTop = currentItem.offsetTop + currentItem.offsetParent.offsetTop;
+            var currentItemWindowTop = currentItemBodyTop - scrollHeight;
+            var currentHeight = currentItem.offsetHeight;
+            var bottomHeight = currentHeight + currentItemBodyTop;
+            <!--恒成立：距离顶部高度< 滑动范围 < 距离顶部高度+自身高度-->
+            <!--//offsetTop：当前标签距离上级定位标签的高度（没有则直接找到body）-->
+            <!--//距离顶部高度=自己.offsetTop + 自己.offsetParent.offsetTop-->
+            <!--/最大范围=...+.offsetHeight-->
+            <!--document.body.offsetHeight = header的高度-->
+            <!--因为body下面的menu和content标签都是absolute定位，都已经脱离了文档流，因此只有头部把内容撑开了，只有48px-->
+            if(currentItemWindowTop<0 && scrollHeight < bottomHeight){
+                var lis = menuNode.getElementsByTagName('li');
+                lis[i].className = 'active';
+                for(var j=0;j<lis.length;j++){
+                    if(lis[i]==lis[j]){}else{lis[j].classList.remove('active');}
+                }
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>

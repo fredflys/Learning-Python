@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div id="i1" style="font-size:35px;">欢迎来到我的博客</div>
+    <script>
+
+        function move(){
+            //前两句也要定义在函数体内，因为文字内容content是不断变化的
+            //根据id获得标签
+            tag = document.getElementById('i1');
+            //取得标签内的内容
+            var content = tag.innerText;
+            //取到第一个字符
+            var first_char = content.charAt(0);
+            //驱动余下的子字符串
+            var rest = content.substring(1,content.length);
+            //反转拼接
+            var new_string = rest + first_char;
+            //将标签内容设置为得到的新字符串
+            tag.innerText = new_string;
+        }
+        //设置定时器，重复该动作
+        setInterval("move();",250);
+    </script>
+</body>
+</html>

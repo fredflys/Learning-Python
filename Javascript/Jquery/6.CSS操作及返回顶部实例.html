@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS操作和返回顶部实例</title>
+</head>
+<style>
+    .hide{display:none;}
+</style>
+<body>
+    <div class="c1" style="height:1200px;width:1300px;;border:1px solid green;">
+        <div class="c3" style="height:100px;width:600px;border:1px solid purple;overflow:scroll;"><div>1</div><div>1</div><div>1</div><div>1</div><div>1</div></div>
+    </div>
+    <div class="c2" style="background-color:yellow;position:fixed;bottom:5%;right:5%;100px;height:30px;width:100px;border:1px solid red;text-align:center;padding:0 auto;cursor:pointer;" onclick="ReturnTop();">返回顶部</div>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    window.onscroll = function(){
+        var index = $(window).scrollTop();
+        if(index>50){
+            $(".c2").removeClass("hide");
+        }else{
+            $(".c2").addClass("hide");
+        }
+    }
+    function ReturnTop(){
+        $(window).scrollTop(0);
+        $(".c3").scrollTop(0);
+
+    }
+
+</script>
+</body>
+</html>

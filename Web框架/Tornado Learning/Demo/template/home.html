@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href='{{ static_url("commons.css") }}'/>
+</head>
+<body>
+    <h1>直道相思了无益，未妨惆怅是清狂</h1>
+    <form method="post" action="/index">
+        <input type="text" name="comment"/>
+        <input type="submit" value="提交"/>
+    </form>
+    <h3>{{method_arg}}</h3>
+    <h1>展示内容</h1>
+    <p>
+    模板语言中的自定义
+    uimethod
+    uimodel
+    </p>
+    <h2>{{func(method_arg)}}</h2>
+    <h2>{% module custom() %}</h2>
+    <ul>
+        <p>
+        模板语言中，for循环展示数据
+        代码块，一定要有end
+        模板语言中双大括号表示普通的表达式
+        通过模板语言在html中与后台进行了交互
+        </p>
+        {% for item in temp %}
+        {% if item == "red" %}
+            <li style="color:red;">{{item}}</li>
+        {% else %}
+            <li>{{item}}</li>
+        {% end %}
+        {% end %}
+    </ul>
+<script src='{{static_url ("script.js")}}'></script>
+</body>
+</html>

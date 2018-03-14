@@ -1,0 +1,22 @@
+import socket
+
+sk = socket.socket()
+#将服务端绑定自己的IP和端口,格式为元组
+sk.bind(('127.0.0.1',9999,))
+#监听端口，参数为最大排队数
+sk.listen(5)
+#等待接受客户端的请求，阻塞
+#connection是连接的线，address是连接方的
+#保持打开状态，等待连接
+while True:
+    connection,address = sk.accept() #阻塞，等待用户连接
+    #python2中可以直接传字符串，3中sendall方法需要传入字节
+    connection.sendall(bytes('欢迎光临',encoding='utf-8'))
+    while True:
+        recv_bytes = connection.recv(1024)
+        recv_str = str(recv_bytes,encoding='utf-8')
+        if recv_str == 'q':
+            break
+        connection.sendall(bytes(recv_str+' 已收到',encoding='utf-8'))
+    print(address,connection)
+

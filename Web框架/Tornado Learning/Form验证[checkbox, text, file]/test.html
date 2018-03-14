@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="header">
+                <span>注册</span>
+                <div class="dialog-close" onclick="CloseDialog('#accountDialog');">X</div>
+            </div>
+            <div class="content">
+                <div style="padding: 0 70px">
+                    <div class="tips">
+                        <span>输入注册信息</span>
+                    </div>
+                    <div id="register_error_summary" class="error-msg">
+
+                    </div>
+                    <div class="inp">
+                        <input name="username" type="text" placeholder="请输入用户名" />
+
+                    </div>
+                    <div class="inp">
+                        <input name="email" id="email" type="text" placeholder="请输入邮箱" />
+                    </div>
+                    <div class="inp">
+                        <input name="email_code" class="email-code" type="text" placeholder="请输入邮箱验证码" />
+                        <a id="fetch_code" class="fetch-code" href="javascript:void(0);">获取验证码</a>
+                    </div>
+                    <div class="inp">
+                        <input name="password" type="password" placeholder="请输入密码" />
+                    </div>
+                    <div class="inp">
+                        <div class="submit" onclick="SubmitRegister(this);">
+                            <span>注册</span>
+                            <span class="hide">
+                                <img src="/statics/images/loader.gif" style="height: 16px;width: 16px">
+                                <span>正在注册</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>

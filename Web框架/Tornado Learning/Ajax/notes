@@ -1,0 +1,109 @@
+Ajax介绍
+浏览器中的XMLHTTPRequest对象
+原生AJax以及jquery Ajax
+form表单传输数据和文件上传
+
+Ajax
+	部分刷新，省流量
+	异步js和xml，实际更常用的其实是json[字符串化的对象]
+    浏览器中用XMLHttpRequest来专门处理这种请求
+
+跨浏览器支持
+    XmlHttpRequest
+        IE7+, Firefox, Chrome, Opera, etc.
+    ActiveXObject("Microsoft.XMLHTTP")
+        IE6, IE5
+    function GetXHR(){
+        var xhr = null;
+        if(XMLHttpRequest){
+            xhr = new XMLHttpRequest();
+        }else{
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        return xhr;}
+
+原生Ajax
+    XHR对象的方法
+        b. void send(String body)
+            用于发送请求
+            参数：
+                body： 要发送的数据（字符串类型）
+        发送请求必须有头有尾
+        c. void setRequestHeader(String header,String value)
+            用于设置请求头
+            参数：
+                header： 请求头的key（字符串类型）
+                vlaue：  请求头的value（字符串类型）
+        d. String getAllResponseHeaders()
+            获取所有响应头
+            返回值：
+                响应头数据（字符串类型）
+        e. String getResponseHeader(String header)
+            获取响应头中指定header的值
+            参数：
+                header： 响应头的key（字符串类型）
+            返回值：
+                响应头中指定的header对应的值
+        f. void abort()
+            终止请求
+
+    XHR对象的属性
+        a. Number readyState
+        b. Function onreadystatechange
+           当readyState的值改变时自动触发执行其对应的函数（回调函数）
+        c. String responseText
+           服务器返回的数据（字符串类型）
+        d. XmlDocument responseXML
+           服务器返回的数据（Xml对象）
+        e. Number states
+           状态码（整数），如：200、404...
+        f. String statesText
+           状态文本（字符串），如：OK、NotFound...
+
+
+Jquery AJax
+    2.0版本以上只支持IE9以上版本，要低版本IE兼容，就得使用1.XX版本
+    $.get/post({
+        url: ''.
+        data: {},
+        dataType: "json"/"xml"/"script"/"jsonp", // 如果定义了该参数，会将callback转换为相应的对象
+        success: function(String callback){
+            JSON.parse(callback)
+            eval("<script>alert(1);</script>"
+        }
+    })
+    $.getJson/getScript()
+
+    本质上上面的方法都会调用ajax方法
+    $.ajax({
+        url:''.
+        type:''
+    })
+部分参数：
+            url：请求地址
+           type：请求方式，GET、POST（1.9.0之后用method）
+        headers：请求头
+           data：要发送的数据
+    contentType：即将发送信息至服务器的内容编码类型(默认: "application/x-www-form-urlencoded; charset=UTF-8")
+          async：是否异步
+        timeout：设置请求超时时间（毫秒）
+
+     beforeSend：发送请求前执行的函数(全局)
+       complete：完成之后执行的回调函数(全局)
+        success：成功之后执行的回调函数(全局)
+          error：失败之后执行的回调函数(全局)
+
+
+        accepts：通过请求头发送给服务器，告诉服务器当前客户端课接受的数据类型
+       dataType：将服务器端返回的数据转换成指定类型
+                       "xml": 将服务器端返回的内容转换成xml格式
+                      "text": 将服务器端返回的内容转换成普通文本格式
+                      "html": 将服务器端返回的内容转换成普通文本格式，在插入DOM中时，如果包含JavaScript标签，则会尝试去执行。
+                    "script": 尝试将返回值当作JavaScript去执行，然后再将服务器端返回的内容转换成普通文本格式
+                      "json": 将服务器端返回的内容转换成相应的JavaScript对象
+                     "jsonp": JSONP 格式
+                              使用 JSONP 形式调用函数时，如 "myurl?callback=?" jQuery 将自动替换 ? 为正确的函数名，以执行回调函数
+
+                      如果不指定，jQuery 将自动根据HTTP包MIME信息返回相应类型(an XML MIME type will yield XML, in 1.4 JSON will yield a JavaScript object, in 1.4 script will execute the script, and anything else will be returned as a string
+
+     converters： 转换器，将服务器端的内容根据指定的dataType转换类型，并传值给success回调函数

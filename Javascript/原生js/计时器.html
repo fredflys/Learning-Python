@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="https://www.sogou.com/web?" method="">
+        <input name="query" type="text" />
+        <input type="submit" onclick="SubmitForm();" value="提交"/>
+    </form>
+    <input type="button" value="confirm" onclick="Confirm();" />
+    <input type="button" value="定时器开始" onclick="Interval();" />
+    <input type="button" value="定时器停止" onclick="StopInterval()"/>
+    <div>
+        <input type="button" value="删除" onclick="Del();"/>
+        <input type="button" value="不让状态消失" onclick="Unclear();"/>
+        <div id="status"></div>
+    </div>
+<script>
+    function SubmitForm(){
+
+    }
+    function Confirm(){
+        var r = confirm('a');
+        <!--根据用户选择确定或者取消，向控制台输出true或flase-->
+        console.log(r)
+    }
+    <!--给setInterval传入匿名函数-->
+    <!--计时器开始后并没有阻塞进程，其余代码照样一次运行，可以理解为开了一个新线程-->
+    <!--setInterval其实是有返回值的，注意这里将返回值设为全局变量，而非局部变量-->
+    <!--这样停止计时器时才能读取到其返回值&ndash-->
+    function Interval(){
+        s1 = setInterval(function(){
+        console.log('千里孤坟')},1000);
+        s2 = setInterval(function(){
+        console.log('无处话凄凉')},1000);
+    }
+    function StopInterval(){
+        <!--停止定时器1-->
+        clearInterval(s1);
+    }
+    function Del(){
+        document.getElementById('status').innerText = '已删除';
+        t1 = setTimeout(ClearStatus, 5000);
+    }
+    function ClearStatus(){
+        document.getElementById('status').innerText = '';
+    }
+    function Unclear(){
+        clearTimeout(t1);
+    }
+    <!--可以用来重定向-->
+    var address = location.href;
+    <!--重新加载，就是刷新-->
+    <!--location.reload();-->
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作用域补充</title>
+</head>
+<body>
+    <div id="btns">
+    <input type="button" value="点我" />
+    <input type="button" value="点我" />
+    <input type="button" value="点我" />
+    </div>
+    <script>
+        <!--js中没有块级作用域，只有函数作用域-->
+        <!--函数在定义时已经创建了作用域链，之后按照作用域链执行-->
+        <!--变量a只会被认为是在函数func()中，而不在循环体内-->
+        <!--甭管有多少层嵌套，只要在函数内，就可以被函数读取到-->
+        function func(){
+            for(var i=0;i<10;i++){
+                <!--函数只要没有被调用，便不会执行-->
+                <!--也就是定时器并没有被触发匿名函数，匿名函数中的i也不是循环体中的i-->
+                <!--该函数其实根本就没有执行。到运行时在循环中，只是创建了10个函数，都交给了定时器-->
+                setInterval(function(){console.log(i);},1000);
+            }
+        }
+        <!--函数在这里才真正执行，执行时创建了10个计时器，分别传入了10个匿名函数，发现当中有变量i，但匿名函数内部并没有定义，于是就向外寻找-->
+        <!--疑惑点是函数为什么不是每循环一个i便去寻找i的值并输出-->
+        <!--我的理解是每个计时器并不会阻塞主线程【核心】，而是循环时一次全部创建，然后寻找i的值，发现i在循环体后等于10-->
+        <!--如果理解为每循环一次便找当前的i值，然后才继续循环，那其实就等于认为计时器会阻塞当前执行过程，显然这是不对的-->
+        func();
+        <!--区别于在标签内直接绑定事件，也可以在js中找到标签为其onclick属性注册一个事件-->
+        document.getElementById('btns').onclick = function(){}
+
+
+       var btns = document.getElementById('btns').children;
+       <!--循环会在加载网页时执行，但为其注册的函数并没有执行，而是在点击按钮时才会执行-->
+       <!--这时j的值已经因为循环走了一遍而变为了3，因此会返回3-->
+       for(var j=0;j<btns.length;j++){
+            var current_input = btns[j];
+            current_input.onclick =  function(){alert(j);};
+       }
+    </script>
+</body>
+</html>

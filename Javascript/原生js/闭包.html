@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure</title>
+</head>
+<body>
+三点事实：
+    变量作用域：全局和局部
+    函数内部可以直接读取全局变量
+    函数外部无法直接读取局部变量
+变通之道：
+    在函数内部再定义一个函数
+<script>
+    functionn f1{
+        var n = 999;
+        function f2{
+            alert(n);
+        }
+    }
+    f1的局部变量对f2是可见的，全局变量又对f1是可见的。
+    此所谓链式作用域，子对象会一级一级向上寻找所有父对象的变量
+
+</script>
+</body>
+</html>

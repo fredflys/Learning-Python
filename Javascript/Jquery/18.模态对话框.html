@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态对话框</title>
+    <style>
+    .shade{
+        position:fixed;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        background:rgba(0,0,0,.6);
+        z-index:20;
+    }
+    .modal{
+        border:1px solid #ddd;
+        position:fixed;
+        left:50%;
+        top:50%;
+        height:300px;
+        width:400px;
+        margin-top:-150px;
+        margin-left:-200px;
+        z-index:30;
+        background-color:white;
+    }
+    .hide{
+        display:none;
+    }
+    </style>
+</head>
+<body>
+<p>
+后台管理，操作表格：
+    打开新链接操作
+        内容比较多
+    模态对话框内操作
+        内容比较少
+        单条修改，不适合批量操作
+    EditRow
+模态对话跨
+    遮盖层和弹出层
+</p>
+
+<div>
+    <table border="1">
+        <input type="button" onclick="Add();" value="添加"/>
+        <thead>
+            <tr>
+                <th>主机名</th>
+                <th>IP地址</th>
+                <th>端口名</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td target="host">c1.com</td>
+                <td target="ip">1.1.1.1</td>
+                <td target="port">8888</td>
+                <td onclick="Edit(this);">Edit</td>
+            </tr>
+             <tr>
+                <td target="host">c2.com</td>
+                <td target="ip">1.1.1.1</td>
+                <td target="port">8888</td>
+                <td onclick="Edit(this);">Edit</td>
+            </tr>
+            <tr>
+                <td target="host">c3.com</td>
+                <td target="ip">1.1.1.1</td>
+                <td target="port">8888</td>
+                <td onclick="Edit(this);">Edit</td>
+            </tr>
+            <tr>
+                <td target="host">c4.com</td>
+                <td target="ip">1.1.1.1</td>
+                <td target="port">8888</td>
+                <td onclick="Edit(this);">Edit</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!--修改完后的个人信息如何处理？往外出单，要将修改后的数据提交给别人【后台】
+-->
+
+<div class="shade hide"></div>
+<div class="modal hide">
+    <div>
+    <form action="https://www.google.com" method="get">
+        <p><input type="text" id = 'host' name="host"></p>
+        <p><input type="text" id = 'ip' name="ip"></p>
+        <p><input type="text" id = 'port' name="port"></p>
+        <input type="submit" value="提交" onclick="return SubmitForm();"/>
+        <input type="button" value="取消" onclick="HideForm();"/>
+    </form>
+</div>
+
+</div>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    function Edit(ths){
+        <!--this代指当前点击的标签-->
+        <!--将dom对象转换为jquery对象-->
+        $(".shade, .modal").removeClass("hide");
+        var prevList = $(ths).prevAll();
+        <!--可以通过索引来获取每个标签的值，但如果数据很多呢？如果数据是动态生成的呢？显然是出力不讨好的办好-->
+        <!--一个解决方案是自定义属性-->
+        $.each(prevList, function(){
+            var text = $(this).text();
+            var target = $(this).attr("target");
+            $("#"+target).val(text);
+        });
+    }
+    function HideForm(){
+        $(".shade, .modal").addClass("hide");
+        <!--点击取消时，清空内容，这样添加时模态对话框的内容就会清空-->
+        $("form").find("input[type=text]").val("");
+    }
+    function Add(){
+        $(".shade, .modal").removeClass("hide");
+    }
+
+    <!--一个基础的表单验证功能-->
+    function SubmitForm(){
+        $("form").find("input[type=text]").each(function(){
+            flag = true;
+            if($(this).val().trim().length == 0){
+                flag = false;
+                <!--这里的return false是为了退出each循环-->
+                alert("还没填完整");
+                return false;
+            }
+        });
+        return flag;
+    }
+</script>
+</body>
+</html>

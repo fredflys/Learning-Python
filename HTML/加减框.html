@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .left{
+            float:left;
+        }
+        .wrap{
+            height:22px;
+            width:150px;
+
+
+        }
+        .wrap .minus{
+            height:22px;
+            width:22px;
+            line-height:22px;
+            text-align:center;
+            border:1px solid #ddd;
+            cursor:pointer;
+        }
+        .wrap .plus{
+            height:22px;
+            width:22px;
+            line-height:22px;
+            text-align:center;
+            border:1px solid #ddd;
+            cursor:pointer;
+        }
+        .wrap .count input{
+            padding:0px;
+            border:0px;
+            width:100px;
+            height:22px;
+            border-top:1px solid #ddd;
+            border-bottom:1px solid #ddd;
+            text-align:center;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="minus left">-</div>
+        <div class="count left">
+            <input type="text" value="100" />
+        </div>
+        <div class="plus left" onclick="Plus();">+</div>
+    </div>
+    <script type="text/javascript">
+        function Plus(){
+            var old_str = document.getElementById('count').value;
+            var old_int = parseInt(old_str);
+            var new_int = old_int + 1;
+            document.getElementById('count').value = new_int;
+        }
+
+    </script>
+</body>
+</html>

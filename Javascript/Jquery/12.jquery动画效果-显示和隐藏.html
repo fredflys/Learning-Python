@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画效果</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#hide').click(function(){$('p').hide(1000);});
+            $('#show').click(function(){$('p').show(1000);});
+
+            //用于切换被选元素的hide和show方法
+            $('#toggle').click(function(){$('p').toggle(1000)});
+        })
+    </script>
+</head>
+<body>
+    <p>Hello</p>
+    <button id="hide">隐藏</button>
+    <button id="show">显示</button>
+    <button id="toggle">隐藏/显示</button>
+</body>
+</html>

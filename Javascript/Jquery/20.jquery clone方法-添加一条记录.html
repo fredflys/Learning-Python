@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="outer">
+        <input type="button" value="删除" onclick="Del();">
+        <div class="section">
+            <div class="icons" style="display:inline-block;">
+                <!--这里给button加样式是为了保持按钮的大小一致-->
+                <a onclick="Add(this);"><button style="height:20px;width:20px;padding:0;">+</button></a>
+            </div>
+            <div class="inputs" style="display:inline-block;">
+                <input type="checkbox"/>
+                <input type="text" value="IP"/>
+            </div>
+        </div>
+    </div>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    function Add(arg){
+        if($(arg).children()[0].innerText == '-'){
+            <!--使用remove方法的对象就是将要删除的元素，括号中填入的是限定条件-->
+            <!--如删除class="italic"的p标签：$("p").remove(".italic")-->
+            $(arg).parent().parent().remove();
+        }else{
+            var item = $(arg).parent().parent().clone();
+            <!--注意这里是innerText属性，而不是text属性-->
+            item.find("button")[0].innerText = '-';
+            <!--这是为了确保每次添加新的一行,文本框的内容都是空的,而不是随着用户在第一个section中输入的内容而变化-->
+            item.find("input[type=text]")[0].value = "";
+            $(".outer").append(item);
+        }
+    }
+
+    function Del(){
+        $(".outer").find(".section").find("input[type=checkbox]").each(function(){
+            if($(this).prop("checked") == true){
+                $(this).parent().parent().remove();
+            }else{}
+            <!--这是为了保证即使删除了第一个section,仍然可以通过余下section中的第一个添加元素-->
+            $(".outer").find(".section").first().find("button")[0].innerText = "+";
+
+        })
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>左侧菜单</title>
+</head>
+<style>
+    .menu{
+        float:left;
+        width:20%;
+        height:800px;
+        border:1px solid red;
+    }
+    .content{
+        float:left:
+        width:70%;
+        height:800px;
+        border:1px solid green;
+
+    }
+    .title{
+        font-size:30px;
+    }
+    .hide{
+        display:none;
+    }
+</style>
+<script src="jquery-3.2.1.min.js"></script>
+<body>
+    <div class="outer">
+        <div class="menu">
+            <div class="item">
+                <div class="title" onclick="Show(this);">菜单一</div>
+                <div class="sub-title">
+                    <div>1.1</div>
+                    <div>1.2</div>
+                    <div>1.3</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="title" onclick="Show(this);">菜单二</div>
+                <div class="sub-title hide">
+                    <div>2.1</div>
+                    <div>2.2</div>
+                    <div>2.3</div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="title" onclick="Show(this);">菜单三</div>
+                <div class="sub-title hide">
+                    <div>3.1</div>
+                    <div>3.2</div>
+                    <div>3.3</div>
+                </div>
+            </div>
+            </div>
+        <div class="content"></div>
+    </div>
+<script>
+    function Show(arg){
+        $(arg).next().removeClass("hide");
+        <!--$(arg).parent().siblings().children(".sub-title").addClass("hide");-->
+
+        $(arg).parent().siblings().children(".sub-title").addClass("hide");
+    }
+</script>
+</body>
+</html>

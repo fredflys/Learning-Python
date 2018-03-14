@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#in').click(function(){
+                $('#id1').fadeIn(1000);
+                $('#id2').fadeIn(1000);
+                $('#id3').fadeIn(1000);
+            })
+
+            $('#out').click(function(){
+                $('#id1').fadeOut(1000);
+                $('#id2').fadeOut(1000);
+                $('#id3').fadeOut(1000);
+            })
+
+            $('#toggle').click(function(){
+                $('#id1').fadeToggle(1000);
+                $('#id2').fadeToggle(1000);
+                $('#id3').fadeToggle(1000);
+            })
+
+            $('#fadeTo').click(function(){
+                $('#id1').fadeTo(1000,0.4);
+                $('#id2').fadeTo(1000,0.5);
+                $('#id3').fadeTo(1000,0);
+
+            })
+
+
+
+
+        })
+
+
+
+    </script>
+</head>
+<body>
+    <button id="in">FadeIn</button>
+    <button id="out">FadeOut</button>
+    <button id="toggle">FadeToggle</button>
+    <button id="fadeTo">Fadeto</button>
+
+    <div id="id1" style="display:none;width:80px;height:80px;background-color:blueviolet"></div>
+    <div id="id2" style="display:none;width:80px;height:80px;background-color:orangered"></div>
+    <div id="id3" style="display:none;width:80px;height:80px;background-color:darkgreen"></div>
+</body>
+</html>

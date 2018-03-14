@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原生js实现Ajax</title>
+</head>
+<body>
+    <input type="text" id="usn" name="username"/>
+    <input type="text" id="pwd" name="password"/>
+    <input type="checkbox" id="checked" name="auto" value="1" >7天免登陆
+    <input type="button" value="登陆" onclick="SubmitForm();"/>
+    <script>
+        xhr = null;
+        function SubmitForm(){
+           <!--XMLHttpRequest专门用来暗地里发请求（即不刷新页面）-->
+           xhr = new XMLHttpRequest();
+           <!--open方法用于创建请求，三个参数：方法、地址、是否异步-->
+           xhr.open("POST", "/login", true);
+           <!--每次xhr对象发生变化就调用设置的回调函数-->
+           xhr.onreadystatechange = func;
+           <!--设置请求头，请求是头+身的结构，缺一不可，form的post方法默认帮我们设置了头部-->
+           xhr.setRequestHeader("content-type","application/x-www-form-urlencoded")
+           xhr.send("username=" + document.getElementById("usn").value + ";password=" + document.getElementById("pwd").value);
+        }
+        function func(){
+            if(xhr.readyState == 4){
+                var data = xhr.responseText;
+                var ret_dic = JSON.parse(data);
+                <!--这里只是为了展示status属性的用法，所以加上了多余的判断-->
+                if(ret_dic.status){
+                    alert(ret_qdic.message);
+                }else{
+                    alert(ret_dic.message);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

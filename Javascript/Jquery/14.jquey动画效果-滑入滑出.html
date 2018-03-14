@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#flipshow').click(function(){$('#content').slideDown(1000);})
+            $('#fliphide').click(function(){$('#content').slideUp(1000);})
+            $('#toggle').click(function(){$('#content').slideToggle(1000);})
+        })
+    </script>
+    <style>
+        #flipshow, #content, #fliphide, #toggle{
+            padding:5px;
+            text-align:center;
+            background-color:violet;
+            width:1000px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button id="flipshow">Flipshow</button>
+        <button id="fliphide">Fliphide</button>
+        <button id="toggle">Toggle</button>
+    </div>
+    <div id="content">内容</div>
+</body>
+</html>

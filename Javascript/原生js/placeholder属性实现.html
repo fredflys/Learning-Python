@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索框的placeholder效果实现</title>
+    <style>
+        .gy{color:grey;}
+        .bk{color:black;}
+    </style>
+</head>
+<body>
+    <p><input type="text" placeholder="请输入内容"/></p>
+    <p><input type="text" class = "gy"value="请输入内容" onfocus="Focus(this);" onblur="Blur(this);"/></p>
+    <script>
+        //方法名不可是focus，是js的原生方法
+        function Focus(arg){
+            //查找的第一种方法：document...
+            //查找的第二种方法：this
+            //时刻谨记=号只是赋值操作，不是平常意义上的两边相等
+            //这里下面的arg.value如果换成cv是截然不同的，那样只是在重新设置变量cv的值
+            var cv = arg.value;
+            //改变字体颜色的思路是设置两个style，一个为黑色，一个为灰色，然后用设置类名进行控制
+            //获取焦点时将字体颜色设为黑色
+            arg.className = 'bk';
+            if(cv == '请输入内容'){arg.value = ''}
+        }
+        function Blur(arg){
+            var cv = arg.value;
+            //这里的判断要留心，如果携程cv == ''，那么用户输入多个空格就无法匹配到
+            //因此才去掉空格后判断长度才最为稳妥
+            //如果用户输入为空,则将Focus改过的className再改为灰色
+            if(cv.trim().length == 0){arg.className='gy';arg.value = '请输入内容';}
+        }
+    </script>
+</body>
+</html>

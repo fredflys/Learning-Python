@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TAB菜单</title>
+</head>
+<style>
+    .outer{
+        border:1px solid black;
+        width:400px;
+        margin:auto;
+    }
+    ul{
+        cursor:pointer;
+    }
+    .outer .menu{background-color:grey;border:1px solid green;}
+    ul li{list-style:none;float:left;margin-right:10px;}
+    .contents{clear:both;margin-left:38px;}
+    <!--clearfix 清除浮动，又复习了一下，忘掉了-->
+    .clearfix:after{visibility:hidden;display:block;font-size:0;content:"";clear:both;height:0;}
+    .hide{display:none;}
+</style>
+<script src="jquery-3.2.1.min.js"></script>
+<body>
+    <div class="outer">
+        <!--由于menu内部元素都已经加上了float，脱离了正常文档流，因此没能把menu撑开，这时给menu设置背景色是显示不出来的-->
+        <div class="menu clearfix" >
+            <ul>
+                <li onmouseover="Show(this,'.First');">First</li>
+                <li onmouseover="Show(this,'.Second');">Second</li>
+                <li onmouseover="Show(this,'.Third');">Third</li>
+
+                <li attr="test" onclick="alsoShow(this);">Fourth</li>
+            </ul>
+        </div>
+        <div class="contents">
+            <div class="First">望夫处，江悠悠，化为石，不回头。</div>
+            <div class="Second">山头日日风复雨</div>
+            <div class="Third">行人归来石应语</div>
+
+            <div id="test">泪滴千千万万行，更使人、愁肠断。</div>
+        </div>
+    </div>
+<script>
+    <!--使用jquery确实比js同等实现简化了许多，主要是因为定位和筛选变得十分容易。-->
+    <!--我的这种实现方法和课程里讲的定位对应内容的方法不太一样-->
+    function Show(arg,arg2){
+        var mycontent = $(arg).parent().parent().siblings().children(arg2);
+        mycontent.siblings().addClass("hide");
+        mycontent.removeClass("hide");
+    }
+
+        <!--课程介绍的方法是通过添加自定义属性来定位对应内容-->
+    function alsoShow(arg){
+        var myid = $(arg).attr("attr");
+        var mycontent = $(arg).parent().parent().siblings().children("#"+myid);
+        mycontent.removeClass("hide");
+        mycontent.siblings().addClass("hide");
+
+    }
+</script>
+</body>
+</html>

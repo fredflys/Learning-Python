@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form表单传输数据和上传文件</title>
+</head>
+<body>
+    <form method="post" action="/form" enctype="multipart/form-data" id="my_form">
+        <h1>喜欢的游戏</h1>
+        <input type="checkbox" name="games" value="1" />Ori
+        <input type="checkbox" name="games" value="2" />GTA
+        <input type="checkbox" name="games" value="3" />Civilization
+        <br>
+        <input type="file"  multiple="" name="upload_files" id="upload" onchange="printFileInfo();"/>
+        <br>
+        <input type="submit" value="提交">
+        <h2>用户上传的文件：</h2>
+        <ul>
+            {% for item in server_files %}
+            <li><img src="/static/uploads/{{ item }}" style="height:100px;width:150px;"/></li>
+            {% end %}
+        </ul>
+
+        <iframe id="my_frame" name="my_frame" src="" style="display:none;"></iframe>
+    </form>
+
+    <br><br>
+    <input type="button" value="原生ajax上传" onclick="AJaxUpload();"/><br>
+    <input type="button" value="Jquery Ajax上传" onclick="JqueryUpload();"/><br>
+    <input type="button" value="基于iFrame的异步上传" onclick="iFrameUpload();"/>
+    <div id="progress"></div>
+<script src="/static/js/jquery-3.2.1.min.js"></script>
+<script>
+    <!--input发生改变时即调用该函数，也就是用户一旦上传文件，就执行该航速-->
+    <!--打印文件信息-->
+    function printFileInfo(){
+        var files = document.getElementById('upload').files;
+        for(var i=0;i<files.length;i++){
+            var file = files[i];
+            var div = document.createElement('div');
+            if(file.size/1024>1024){
+                size = file.size/1024/1024;
+                size_str = size.toFixed(0) + 'MB.';
+            }else{
+                size = file.size/1024;
+                size_str = size.toFixed(0) + 'KB.';
+            }
+            (file.size/1024).toFixed(0)
+            div.innerHTML = '第' + (i+1) + '个文件的名字是：' + file.name + ', 文件类型:' + file.type + ',文件大小:' + size_str;
+            document.body.appendChild(div);
+        }
+    }
+
+
+    <!--Ajax上传-->
+    function uploadFail(evt){
+        alert('文件上传失败');
+    }
+    function onProgress(evt){
+        var loaded = evt.loaded;
+        var total = evt.total;
+        var per = Math.floor(100*loaded/total);
+        p_div = document.getElementById('progress');
+        $('#progress').Html(per+'%');
+        $('#progress').css('width',per+'%');
+    }
+    <!--因为ajax上传后，页面并不刷新，页面中的server_files并没有更新，因此不会展示文件-->
+    function AJaxUpload(){
+        var files = document.getElementById('upload').files;
+        var form_data = new FormData();
+        form_data.append('games','[1,2]');
+        for(var i=0;i<files.length;i++){
+            form_data.append('upload_files',files[i]);
+        }
+        var xhr = new XMLHttpRequest();
+        xhr.upload.addEventListener('progress', onProgress, false);
+        xhr.upload.addEventListener('error', uploadFail, false);
+        xhr.open('post','/form',true);
+        xhr.send(form_data);
+    }
+
+
+    <!--基于jQuery的Ajax上传-->
+    function JqueryUpload() {
+        <!--注意这里jquery对象和DOM对象的转换-->
+        var files = $('#upload')[0].files;
+        var form_data = new FormData();
+        form_data.append('games','[1,2]');
+        for(var i=0;i<files.length;i++){
+            form_data.append('upload_files',files[i]);
+        }
+        $.ajax({
+            type: 'POST',
+            url: '/form',
+            data: form_data,
+            <!--这两个参数必须带上，因为jquery默认会对数据进行处理，这里不让它进行处理-->
+            processData: false,
+            contentType: false,
+            <!--回调函数，这里arg代表服务端传来的值，有write方法则是write的内容，-->
+            <!--有render方法则是render的内容-->
+            success: function(arg) {
+                alert(arg);
+            }
+        })
+    }
+
+    <!--基于iFrame实现异步上传，兼容性更好，在低版本IE也可以正常运行-->
+    function iFrameUpload() {
+        document.getElementById('my_frame').onload = GetCallback;
+        document.getElementById('my_form').target = 'my_frame';
+        document.getElementById('my_form').submit();
+    }
+    function GetCallback() {
+        var text = $('#my_frame').contents().find('body').text();
+        alert(text);
+    }
+</script>
+</body>
+</html>

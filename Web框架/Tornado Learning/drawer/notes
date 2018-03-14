@@ -1,0 +1,35 @@
+background属性的简写
+background-color:完全填充背景的颜色
+background-image:用作背景的图片
+background-position:确定背景图片的位置
+background-repeat:确定背景图片是否重复铺平
+background-attachment:确定背景图片是否随页面滚动
+Backgroundposition属性(距离左边多少px，距离上边多少px）
+background-position属性控制着背景图片在元素中的位置。掌握的关键是background-position 是图片的左上角定位。
+background-position 属性也可以以关键字，百分比等单位工作，并非一定要精确使用像素（px）。
+关键字很常用，在水平方向有:
+left
+center
+right
+垂直方向有:
+top
+center
+bottom
+就像之前那样使用它们:
+background-position: top right;
+
+百分比的使用方法也一样:
+background-position: 100%50%;
+
+hover伪类
+css的布局就是一个个盒子的放置问题，不是盒子的就用inline-block转换成盒子
+很多时候，网页上的小图片其实都只是一张图片，这张图片是一连串小图片的无缝序列。
+通过span标签，为其设置背景，控制background-position的左侧边距0，顶部边距为-20/-40/
+（这里的数值是每张小图片的高度，如果没有设置no-repeat也可以用正数，当然要计算一下）
+就可以控制要显示的图片。配上hover伪类的话，一张图片就可以实现多个图片的浮动变化，用来表达鼠标指向的高亮效果
+很是节省
+
+vertical-align 基于基线向上（正数）或向下偏移（负数） 垂直对齐
+通过一个空的div嵌套在上级，可方便的用本层的margin属性来调整位置
+
+边框变角（圆、椭圆等）可通过border-radius来实现

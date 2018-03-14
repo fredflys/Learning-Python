@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>line-height</title>
+    <style>
+        .test1{font-size:20px; line-height:0px; border:1px solid #cccccc;background-color:#eeeeee; }
+        .test2{font-size:0px; line-height:20px; border:1px solid #cccccc;background-color:#eeeeee;}
+    </style>
+</head>
+<body>
+    <div class="test1">测试</div>
+    <div style="height:100px;"></div>
+    <div class="test2">测试</div>
+    <p>
+    并不是文字撑开了盒子，而是行高
+    到底这个line-height行高怎么就产生了高度呢？在inline box模型中，有个line boxes，这玩意是看不见的，这个玩意的工作就是包裹每行文字。一行文字一个line boxes。例如“艾佛森退役”这5个字，如果它们在一行显示，你艾佛森再牛逼，对不起，只有一个line boxes罩着你；但“春哥纯爷们”这5个字，要是竖着写，一行一个，那真是够爷们，一个字罩着一个line boxes，于是总计五个line boxes。line boxes什么特性也没有，就高度。所以一个没有设置height属性的div的高度就是由一个一个line boxes的高度堆积而成的。
+    </p>
+
+</body>
+</html>

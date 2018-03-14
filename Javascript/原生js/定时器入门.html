@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>定时器</title>
+</head>
+<body>
+    <div id="i1">欢迎来到我的博客   </div>
+    <script>
+        function f1(){
+            console.log(1);
+        }
+        //创建一个定时器
+        <!--两种写法都会启动定时器-->
+        setInterval(f1,1000);
+        setInterval("f1();",1000);
+
+    </script>
+</body>
+</html>

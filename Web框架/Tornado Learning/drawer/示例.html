@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>抽屉新热榜-聚合每日热点、搞笑、有趣资讯</title>
+    <link rel="icon" href="icon/chouti.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .head {
+            background-color: #2459a2;
+            width: 100%;
+            height: 44px;
+            position: fixed;
+            z-index: 1000;
+        }
+
+        .head-content {
+            position: absolute;
+            left: 10%;
+            margin: 0 auto;
+            width: 80%;
+            height: 44px;
+        }
+
+        .log {
+            margin-top: 11px;
+            position: absolute;
+            left: 32px;
+        }
+
+        .nva {
+            position: absolute;
+            left: 17%;
+            bottom: 0px;
+        }
+
+        .nva a, .login a {
+            display: inline-block;
+            height: 44px;
+            line-height: 44px;
+            padding: 0 11px;
+            text-decoration: none;
+            color: #c0cddf;
+            font-size: 12px;
+            font-family: 宋体;
+        }
+
+        .login a {
+            color: white;
+        }
+
+        .nva a:hover, .login a:hover {
+            color: #fff;
+            background-color: #396bb3;
+        }
+
+        #current {
+            display: inline-block;
+            color: #fff;
+            background-color: #204982;
+        }
+
+        .login {
+            position: absolute;
+            right: 18%;
+            bottom: 0px;
+        }
+
+        .search {
+            display: inline-block;
+            background: #f4f4f4;
+            position: absolute;
+            right: 40px;
+            bottom: 7px;
+        }
+
+        .search input {
+            width: 100px;
+            height: 30px;
+            margin-right: -6px;
+            border: 1px white;
+            background: #f4f4f4;
+        }
+
+        .search span {
+            display: inline-block;
+            background: url("icon/icon.png") 0px -197px no-repeat;
+            width: 13px;
+            height: 13px;
+            margin: 0px;
+            position: relative;
+            right: -9px;
+            bottom: -3px;
+        }
+
+        .search a {
+            display: inline-block;
+            background: #f4f4f4;
+            border-left: 1px grey dashed;
+            opacity: 0.9;
+            width: 30px;
+            height: 25px;
+        }
+
+        .middle {
+            padding-top: 44px;
+            background: #ededed;
+            height: auto !important;
+        }
+
+        .middle_content {
+            margin: 0 auto;
+            width: 960px;
+            padding: 6px 28px;
+            height: 745px;
+            background: white;
+        }
+
+        .left {
+            width: 630px;
+            height: 700px;
+        }
+
+        .top {
+            height: 43px;
+            border-bottom: 1px solid #ccdcef;
+            position: relative;
+        }
+
+        .child-nav {
+            width: 200px;
+            height: 42px;
+        }
+
+        .child-nav a {
+            display: inline-block;
+            width: 60px;
+            height: 26px;
+            line-height: 26px;
+            margin-top: 5px;
+            margin-left: 3px;
+            margin-bottom: 13px;
+            text-decoration: none;
+            color: #369;
+            font-size: 12px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .child-nav .active {
+            color: #333;
+            background: url("icon/tip.png") no-repeat 0 -299px;
+        }
+
+        .sort {
+            position: absolute;
+            right: 150px;
+            bottom: 15px;
+        }
+
+        .sort a {
+            display: inline-block;
+            color: #390;
+            text-decoration: none;
+            font-size: 12px;
+            margin-left: 10px;
+
+        }
+
+        .sort .ji {
+            color: #b4b4b4;
+        }
+
+        .publish {
+            background-color: #84a42b;
+            border: 1px solid #8aab30;
+            color: #fff;
+            width: 136px;
+            height: 32px;
+            position: absolute;
+            right: 0px;
+            bottom: 7px;
+            text-decoration: none;
+
+        }
+
+        #jia {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            position: relative;
+            left: 45px;
+            bottom: -4px;
+            background: url("icon/icon.png") 0px -184px;
+        }
+
+        #fa {
+            display: inline-block;
+            position: relative;
+            left: 50px;
+            bottom: -4px;
+            font-size: 15px;
+            font-family: 宋体;
+        }
+
+        .content > div {
+            border-bottom: 1px solid #ccdcef;
+
+        }
+
+        .content_left {
+            width: 550px;
+        }
+
+        .kuang {
+            position: relative;
+
+        }
+
+        .part1 a {
+            width: 550px;
+            margin-top: 6px;
+            font-size: 14px;
+            font-weight: 700;;
+            text-align: justify;
+            text-decoration: none;
+        }
+
+        .part1 a:link {
+            color: #369
+        }
+
+        .part1 a:visited {
+            color: #99aecb;
+            /*color: red;*/
+            text-decoration: none;
+        }
+
+        .part1 a:hover {
+            text-decoration: underline;
+        }
+
+        .part1 a:active {
+            color: #369
+        }
+
+        .laizi {
+            color: #b4b4b4;
+            margin-left: 13px;
+            font-size: 12px;
+        }
+
+        .laizi a {
+            font-size: 12px;
+        }
+
+        .part2 {
+            position: relative;
+        }
+
+        .part2 a {
+            display: inline-block;
+            width: 54px;
+            text-decoration: none;
+            font-size: 14px;
+            margin: 5px 0;
+            margin-right: 9px;
+        }
+
+        .hand span {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: url("icon/icon2.png") 0px -40px;
+        }
+
+        .hand:hover span {
+            background: url("icon/icon2.png") 0px -20px;
+        }
+
+        .hand:hover b, .xinxi:hover b, .wenzi:hover b {
+            text-decoration: underline;
+            color: #369;
+        }
+
+        .xinxi span {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: url("icon/icon2.png") 0px 78px;
+        }
+
+        .xinxi:hover span {
+            background: url("icon/icon2.png") 0px 98px;
+        }
+
+        .shou {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            background: url("icon/icon2.png") 0px 18px;
+        }
+
+        .wenzi:hover .shou {
+            background: url("icon/icon2.png") 0px -140px;
+        }
+
+        #user {
+            width: 112px;
+
+        }
+
+        #user span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            padding: 1px;
+            border: 1px solid #ccc
+        }
+
+        .part2 b {
+            color: #99aecb;
+            font-size: 14px;
+            font-weight: 700;
+            vertical-align: 4px;
+            margin-left: 7px;
+        }
+
+        .wenzi b {
+            vertical-align: 4px;
+            font-family: 宋体;
+            font-size: 12px;
+            font-weight: 200;
+        }
+
+        #ru {
+            width: 68px;
+            font-size: 12px;
+            margin-right: 0px;
+
+        }
+
+        #ru b {
+            color: #e59373;
+            font-weight: 400;
+
+        }
+
+        i {
+            font-style: normal;
+            color: #ccc;
+            font-weight: 400;
+            font-size: 12px;
+            vertical-align: 4px;
+        }
+
+        .share {
+            display: none;
+            visibility: visible;
+        }
+
+        .kuang:hover .share {
+            display: inline-block;
+            visibility: visible;
+        }
+
+        .share a {
+            display: inline-block;
+            width: 17px;
+            height: 16px;
+            margin: 0px;
+        }
+
+        .sina {
+            background: url("icon/share_icon.png") 0px 0px no-repeat;
+        }
+
+        .sina:hover {
+            background: url("icon/share_icon.png") 0px -89px no-repeat;
+        }
+
+        .douban {
+            background: url("icon/share_icon.png") 0px -14px no-repeat;
+        }
+
+        .douban:hover {
+            background: url("icon/share_icon.png") 0px -103px no-repeat;
+        }
+
+        .qqzone {
+            background: url("icon/share_icon.png") 0px -31px no-repeat;
+        }
+
+        .qqzone:hover {
+            background: url("icon/share_icon.png") 0px -120px no-repeat;
+        }
+
+        .renren {
+            background: url("icon/share_icon.png") 0px -61px no-repeat;
+        }
+
+        .renren:hover {
+            background: url("icon/share_icon.png") 0px -150px no-repeat;
+        }
+
+        .content_right {
+            position: absolute;
+            right: 7px;
+            top: 5px;
+        }
+
+        .content_right img {
+            width: 60px;
+            height: 60px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 1px;
+        }
+
+        .page {
+            margin-top: 20px;
+        }
+
+        .page li {
+            float: left;
+            display: inline;
+            height: 34px;
+            line-height: 34px;
+            text-align: center;
+            font-size: 12px;
+
+        }
+
+        .page1 {
+            width: 34px;
+            font-weight: 700;
+            color: #333;
+            margin-right: 6px;
+        }
+
+        .page a {
+            float: left;
+            color: #369;
+            width: 34px;
+
+            text-decoration: none;
+            border: 1px solid #e1e1e1;
+            border-radius: 15%;
+            margin-right: 6px;
+        }
+
+        .page a:hover {
+            color: #fff;
+            background-color: #369;
+            border: 1px solid #369;
+        }
+
+        #page_edge {
+            width: 77px;
+            border-radius: 8%;
+        }
+
+        .right {
+            width: 300px;
+            float: right
+
+        }
+
+        .right a {
+            display: block;
+            position: absolute;
+            right: 195px;
+            top: 54px;
+        }
+
+        .right .right_1 {
+            display: block;
+            position: absolute;
+            top: 130px;
+            right: 195px;
+        }
+
+        .footer {
+            margin: 0 auto;
+            width: 960px;
+            font-size: 12px;
+            background-color: #fff;
+            padding: 0 28px;
+        }
+
+        .foot-nav {
+            padding-top: 15px;
+            text-align: center;
+            border-top: 1px solid #ccdcef;
+            position: relative;
+            padding: 10px 28px 6px;
+        }
+
+        .foot-nav a {
+            color: #369;
+            margin-left: 10px;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .foot-nav2 {
+            margin-top: 6px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .foot-nav2 img {
+            vertical-align: -2px;
+            margin-right: 3px;
+        }
+
+        .foot-nav2 a {
+            color: #999;
+        }
+
+        .foot-nav2 span a {
+            color: #369;
+        }
+
+        .foot-nav2 div {
+            margin-top: 6px;
+        }
+
+        .return-top {
+            display: block;
+            height: 38px;
+            width: 38px;
+            position: fixed;
+            left: 1202px;
+            bottom: 60px;
+            background: url("icon/Back.png") 0 0 no-repeat;
+        }
+
+        .return-top:hover {
+            background: url("icon/Back.png") 0 -40px no-repeat;
+        }
+    </style>
+</head>
+<body>
+<div class="head">
+    <div class="head-content">
+        <div class="log"><a href="#"><img src="icon/logo.png" alt=""></a></div>
+        <div class="nva">
+            <a href="" id="current">全部</a>
+            <a href="">42区</a>
+            <a href="">段子</a>
+            <a href="">图片</a>
+            <a href="">挨踢1024</a>
+            <a href="">你问我答</a>
+        </div>
+        <div class="login">
+            <a href="">注册</a>
+            <a href="">登录</a>
+        </div>
+        <div class="search">
+            <input type="text">
+            <a href=""><span></span></a>
+        </div>
+    </div>
+</div>
+<div class="middle">
+    <div class="middle_content">
+        <div class="left">
+            <div class="top">
+                <div class="child-nav">
+                    <a class="active" href="">最热</a>
+                    <a href="">发现</a>
+                    <a href="">人类发布</a>
+                </div>
+                <div class="sort">
+                    <a class="ji" href="">及时排序</a>
+                    <a href="">24小时</a>
+                    <a href="">3天</a>
+                </div>
+                <div><a class="publish" href=""><span id="jia"></span><span id="fa">发布</span></a></div>
+            </div>
+            <div class="content">
+                <div class="kuang">
+                    <div class="content_left">
+                        <span class="part1"><a href="#1" target="_blank">IT人张伟波1999年注册了与自己名字全拼相同的域名“Weibo.com”，12年后的2011年4月1日，新浪市场部给他打电话商谈购买域名一事，最终以800万人民币的价格成交。
+                        其实有个大连小伙子魏波，在张先生之前也注册了和自己姓名全拼相同的域名，因为口音问题，他注册的是"Weibe.com"</a></span>
+                        <span class="part1 laizi">来自<a href="">iPhone</a></span>
+                    </div>
+                    <div class="part2">
+                        <a class="hand" href=""><span></span><b>44</b></a>
+                        <a class="xinxi" href=""><span></span><b>12</b></a>
+                        <a class="wenzi" href=""><span class="shou"></span><b>私藏</b></a>
+                        <a class="wenzi" id="user" href=""><span><img
+                                src="img/wKgCFFKDN1TBAXCgAAAUK25ZxBo425=15x15.jpg"></span><b>从善如流马歇尔</b></a>
+                        <a id="ru" href=""><b>5分钟前</b></a><i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <a class="sina" href=""></a>
+                            <a class="douban" href=""></a>
+                            <a class="qqzone" href=""></a>
+                            <a class="renren" href=""></a>
+                        </span>
+                    </div>
+                    <div class="content_right"><img
+                            src="img/CHOUTI_D6E0A644529B47489D1119F9953D5FAB_W400H437=C60x60.jpg" alt="">
+                    </div>
+                    <div></div>
+                </div>
+                <div class="kuang">
+                    <div class="content_left">
+                        <span class="part1"><a href="#2" target="_blank">【曾90天融资1个亿的空格宣布停止服务，创始人唐永波早已转战共享充电宝】空格于2015年6月15日成立，是一个针对个人服务者的S2C平台。成立之初，曾倍受资本热捧，众多媒体称其创造了“90天融资1个亿”的神话。早在产品未上线时，“空格”就获得了盈动资本数百万美元天使融资。 </a></span>
+                        <span class="part1 laizi">来自<a href="">iPhone</a></span>
+                    </div>
+                    <div class="part2">
+                        <a class="hand" href=""><span></span><b>89</b></a>
+                        <a class="xinxi" href=""><span></span><b>44</b></a>
+                        <a class="wenzi" href=""><span class="shou"></span><b>私藏</b></a>
+                        <a class="wenzi" id="user" href=""><span><img
+                                src="img/CHOUTI_64007588819145BF90343E8027E9554E_W180H180=15x15.jpg"></span><b>投资界微博</b></a>
+                        <a id="ru" href=""><b>15分钟前</b></a><i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <a class="sina" href=""></a>
+                            <a class="douban" href=""></a>
+                            <a class="qqzone" href=""></a>
+                            <a class="renren" href=""></a>
+                        </span>
+                    </div>
+                    <div class="content_right"><img
+                            src="img/CHOUTI_E6B9FD1F14A34BB487A90F1E60E09DED_W500H250=C60x60.jpg" alt="">
+                    </div>
+                    <div></div>
+                </div>
+                <div class="kuang">
+                    <div class="content_left">
+                        <span class="part1"><a href="#3" target="_blank">【租房“跑路”女孩现身协商：赔偿6400元与房东达成和解】两名当事人租房女孩卢燕(化名)、张琪(化名)终于现身要求与房东协商解决。8月5日，两名女孩给房东李华（化名）转账6400元作为拖欠房租和物业的补偿费用，由房东自行垫付房屋清洁费用及家具修理费用，双方达成和解。而关于车位费的问题也已解决，女孩退还了剩余费用。</a></span>
+                        <span class="part1 laizi">来自<a href="">-weibo.com</a></span>
+                    </div>
+                    <div class="part2">
+                        <a class="hand" href=""><span></span><b>123</b></a>
+                        <a class="xinxi" href=""><span></span><b>12</b></a>
+                        <a class="wenzi" href=""><span class="shou"></span><b>私藏</b></a>
+                        <a class="wenzi" id="user" href=""><span><img
+                                src="img/wKgCIk4wyR-rs6k-AACrPRbXP2s076=15x15.jpg"
+                                width="15px" height="15px"></span><b>乱太郎</b></a>
+                        <a id="ru" href=""><b>16分钟前</b></a><i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <a class="sina" href=""></a>
+                            <a class="douban" href=""></a>
+                            <a class="qqzone" href=""></a>
+                            <a class="renren" href=""></a>
+                        </span>
+                    </div>
+                    <div class="content_right"><img
+                            src="img/CHOUTI_2FA0E032F8A447FFA24D37DC0ABDEB10_W426H426=C60x60.jpg" alt="">
+                    </div>
+                    <div></div>
+                </div>
+                <div class="kuang">
+                    <div class="content_left">
+                        <span class="part1"><a href="#4" target="_blank">【城市漫步：我在上钢新村住了三十年】工厂不复，码头不复，舞台换了名字，上钢新村的由来……7月的傍晚，“漫步上钢”的行程临时换了主讲人，漫步者惊讶地问，“这不是你们安排好的？”</a></span>
+                        <span class="part1 laizi">来自<a href="">iPhone</a></span>
+                    </div>
+                    <div class="part2">
+                        <a class="hand" href=""><span></span><b>44</b></a>
+                        <a class="xinxi" href=""><span></span><b>12</b></a>
+                        <a class="wenzi" href=""><span class="shou"></span><b>私藏</b></a>
+                        <a class="wenzi" id="user" href=""><span><img
+                                src="img/wKgCK0-nUYqEbRl2AAAf684AurU650=15x15.jpg"></span><b>缥缈水云间</b></a>
+                        <a id="ru" href=""><b>22分钟前</b></a><i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <a class="sina" href=""></a>
+                            <a class="douban" href=""></a>
+                            <a class="qqzone" href=""></a>
+                            <a class="renren" href=""></a>
+                        </span>
+                    </div>
+                    <div class="content_right"><img
+                            src="img/58078da19b4c225df8c9b7b88c2501d2=C60x60.jpg" alt="">
+                    </div>
+                    <div></div>
+                </div>
+                <div class="kuang">
+                    <div class="content_left">
+                        <span class="part1"><a href="#4" target="_blank">【李文星案涉案人员已被刑拘 天津静海发布传销举报奖励办法】举报奖励办法明确，凡举报非法传销组织及其藏匿的传销窝点，经查实摧毁的，一次性奖励举报人2万元人民币；对举报重大传销案件或传销组织重要骨干成员的举报人视情况增加奖励金额。</a></span>
+                        <span class="part1 laizi">来自<a href="">iPhone</a></span>
+                    </div>
+                    <div class="part2">
+                        <a class="hand" href=""><span></span><b>445</b></a>
+                        <a class="xinxi" href=""><span></span><b>122</b></a>
+                        <a class="wenzi" href=""><span class="shou"></span><b>私藏</b></a>
+                        <a class="wenzi" id="user" href=""><span><img
+                                src="img/wKgCQVaTcMGwh8atAAAdHkSHEvg466=15x15.png"></span><b>万万没想到啊</b></a>
+                        <a id="ru" href=""><b>40分钟前</b></a><i>入热榜</i>
+                        <span class="share">
+                            <i>分享到</i>
+                            <a class="sina" href=""></a>
+                            <a class="douban" href=""></a>
+                            <a class="qqzone" href=""></a>
+                            <a class="renren" href=""></a>
+                        </span>
+                    </div>
+                    <div class="content_right"><img
+                            src="img/CHOUTI_A1A9BE35529E4F338101DD3E27A313C3_W256H256=C60x60.png" alt="">
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div class="page">
+                    <ul>
+                        <li class="page1"><span>1</span></li>
+                        <li><a href="" class="pagepa">2</a></li>
+                        <li><a href="" class="pagepa">3</a></li>
+                        <li><a href="" class="pagepa">4</a></li>
+                        <li><a href="" class="pagepa">5</a></li>
+                        <li><a href="" class="pagepa">6</a></li>
+                        <li><a href="" class="pagepa">7</a></li>
+                        <li><a href="" class="pagepa">8</a></li>
+                        <li><a href="" class="pagepa">9</a></li>
+                        <li><a href="" class="pagepa">10</a></li>
+                        <li><a href="" id="page_edge">下一页</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right">
+            <div>
+                <a href=""><img src="icon/report.jpg" alt=""></a>
+            </div>
+            <div>
+                <a class="right_1" href=""><img src="icon/right.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="foot-nav">
+            <a href="">关于我们</a><span>|</span>
+            <a href="">联系我们</a><span>|</span>
+            <a href="">服务条款</a><span>|</span>
+            <a href="">隐私政策</a><span>|</span>
+            <a href="">抽屉新热门工具</a><span>|</span>
+            <a href="">下载客户端</a><span>|</span>
+            <a href="">意见与反馈</a><span>|</span>
+            <a href="">友情链接</a><span>|</span>
+            <a href="">公告</a><span>|</span>
+            <a href=""><img src="icon/rss.gif" alt="RSS订阅"></a>
+        </div>
+        <div class="foot-nav2">
+            <a href=""><img src="icon/gozap-logo-50_15.gif" alt=""></a><span>旗下站点 </span><span>©2017chouti.com </span>
+            <a href="">京ICP备09053974号-3 京公网安备 110102004562</a>
+            <div>
+                <span>违法和不良信息举报：</span><span>电话：010-58302039</span><span>邮箱：<a href="">jubao@chouti.com</a></span>
+            </div>
+            <div>版权所有：北京格致璞科技有限公司</div>
+        </div>
+    </div>
+    <a class="return-top" href="#"></a>
+</div>
+
+</body>
+</html>
+

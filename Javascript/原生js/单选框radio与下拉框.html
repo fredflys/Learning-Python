@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>单选框与下拉框</title>
+</head>
+<body>
+    radio选择框用相同的name属性实现互斥效果
+    选中与否与 checkbox一样，用checked属性控制
+    下拉框通过select标签的value属性控制选择哪一项,也可以通过selectedIndex属性来控制
+    <ul style="list-style:none;">
+        <li><input type="radio" name="a" value="1"/>他生若作有情痴 人间无地骤相思</li>
+        <li><input type="radio" name="a" value="2"/>平生不会相思 才会相思 便害怕相思</li>
+        <li><input type="radio" name="a" value="3"/>从此山水不想逢 莫道彼此长与短</li>
+    </ul>
+    <select id="sel">
+        <option value="11">从此无心爱良夜，任它明月下西楼</option>
+        <option value="22">与君同舟渡，到岸各自归</option>
+        <option value="33">只将白首更搔短，不许相思比夜长</option>
+        <option value="44">最恨细风摇幕，误人几回迎门</option>
+    </select>
+    <script>
+        var sel = document.getElementById('sel');
+        sel.value = 22;
+        sel.selectedIndex = 2;
+    </script>
+</body>
+</html>

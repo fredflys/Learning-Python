@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM</title>
+</head>
+<body>
+    <div>
+        我是没有标签的开头
+        <div class="a">我是a的文本</div>
+        <div class="b" id="i">
+            我是b的文本  i
+        </div>
+        <div class="c">我是c的</div>
+    </div>
+    <script>
+
+        var i = document.getElementById('i');
+        var p_text = i.parentNode; //含文本
+        var p = i.parentElement;  //不含文本
+
+        var eles_node = p_text.childNodes;      //含文本的所有标签
+        var eles = p.children;        //不含文本的所有标签
+
+        for(var j=0;j<eles_node.length;j++){
+            var current_node = eles_node[j];
+            if(current_node.nodeType == 1){
+                //只当该节点是元素时才输出到log中
+                console.log(eles_node[j]);
+            }
+
+        }
+
+        console.log('---------------');
+        for(var i=0;i<eles.length;i++){
+            console.log(eles[i]);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>边缘提示框</title>
+</head>
+    <!--某一块内容在另一块内容旁边时，可将relative和absolute搭配一起使用-->
+<body>
+    <table>
+        <tr>
+            <td>第一列</td>
+            <td>第二列</td>
+            <td>
+                <div style="position:relative;">
+                <div onclick="show(this);">删  除</div>
+                    <div style="position:absolute;green;left:41px;top:-2px;float:left;">
+                        <input type="button"value="确定"/>
+                        <input type="button" onclick="hide(this);" value="取消"/>
+                    </div>
+                    <div style="margin-left:17px;"></div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>第一列</td>
+            <td>第二列</td>
+            <td>删  除</td>
+        </tr>
+        <tr>
+            <td>第一列</td>
+            <td>第二列</td>
+            <td>删  除</td>
+        </tr>
+        <tr>
+            <td>第一列</td>
+            <td>第二列</td>
+            <td>删  除</td>
+        </tr>
+        <tr>
+            <td>第一列</td>
+            <td>第二列</td>
+            <td>删  除</td>
+        </tr>
+
+    </table>
+</body>
+</html>

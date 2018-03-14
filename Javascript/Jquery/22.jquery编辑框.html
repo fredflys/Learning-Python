@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑框</title>
+        <!--如果没有选中,只要把checkbox打上对勾即可-->
+        <!--如果选中的话,则不仅要打勾,还要使其进入编辑模式-->
+        <!--发现在style里加注释会使得注视下面的样式不起作用个-->
+    <style>
+        .edit-mode{
+            display:inline-block;
+            margin-left:30px;
+            padding:10px;
+            background-color:#ddd;
+            color:black;
+            cursor:pointer;
+        }
+
+        .editing{
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <input type="button" value="全选" onclick="CheckAll('#edit_mode', '#tb1');"/>
+    <input type="button" value="反选" onclick="CheckReverse('#edit_mode', '#tb1');"/>
+    <input type="button" value="取消" onclick="CheckCancel('#edit_mode','#tb1');"/>
+    <a id="edit_mode" class="edit-mode"  onclick="EditMode(this,'#tb1');">进入编辑模式</a>
+    </div>
+    <table border="1px">
+        <thead>
+            <tr>
+            <th>选择</th>
+            <th>主机名</th>
+            <th>端口</th>
+            <th>状态</th>
+            </tr>
+        </thead>
+        <!--加上id,以唯一定位当前表格内容-->
+        <tbody id="tb1">
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td edit="true">Host First</td>
+                <td edit="true">01</td>
+                <td edit="true" edit-type="select" sel-val="1" global-key="STATUS">在线</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" /></td>
+                <td edit="true">Host First</td>
+                <td edit="true">01</td>
+                <td edit="true" edit-type="select" sel-val="2" global-key="STATUS">离线</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td edit="true">Host First</td>
+                <td edit="true">01</td>
+                <td edit="true" edit-type="select" sel-val="1" global-key="STATUS">在线</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"/></td>
+                <td edit="true">Host First</td>
+                <td edit="true">01</td>
+                <td edit="true" edit-type="select" sel-val="1" global-key="STATUS">在线</td>
+            </tr>
+        </tbody>
+    </table>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+
+    <!--attr方法在处理checkbox属性时似乎有些问题，会无法二次赋值 -->
+    <!--第一次修改时，还能成功，再读取并尝试修改时，虽不会报错，但行为和预料的不同-->
+    <!--遇到checkbox时还是尽量用prop方法吧-->
+    <!--根据官方的建议：具有 true 和 false 两个属性的属性，如 checked, selected 或者 disabled 使用prop()，其他的使用 attr()-->
+
+    <!--针对要编辑的slect标签,单独定义一个全局变量,以便复用-->
+    STATUS = [
+        {"id":1, "value":"在线"},
+        {"id":2, "value":"下线"}
+    ];
+
+    function RowIntoEdit($tr){
+        <!--循环当前行的每一列,改变可以改变的每一部分-->
+        $tr.children().each(function(){
+            if($(this).attr("edit") == "true"){
+                if($(this).attr("edit-type") == "select"){
+                    var select_val = $(this).attr("sel-val");
+                    var global_key = $(this).attr("global-key");
+                    <!--"STATUS" window[global_key]-->
+                    <!--生成select标签,并且将为其设置默认值-->
+                    var select_tag = CreateSelect({"onchange":"MultiSelect(this);"},  );
+                    $(this).html(select_tag);
+                }else{
+                    var origin_value = $(this).text();
+                    var temp = "<input value='" + origin_value + "'/>";
+                    $(this).html(temp);
+                }
+            }else{
+
+            }
+
+          })
+    }
+
+    function RowOutEdit($tr){
+        $(this).children().each(function(){
+            if($(this).attr("edit") == "true"){
+                if($(this).attr("edit-type") == "select"){
+                    var new_val = $(this).children(":first").val();
+                    var new_text = $(this).children(":first").find("option[value='" + new_val + "']").text();
+                    $(this).attr("sel-val",new_val);
+                    $(this).text(new_text);
+                }else{
+                    var origin_value = $(this).children().first().val();
+                    $(this).text(origin_value);
+                }
+
+            }else{
+
+            }
+        });
+    }
+
+
+
+
+    <!--全选,反选,取消 三个按钮的逻辑是一脉相通的-->
+    <!--都是先判断是否进入了编辑模式,是的话则勾选或取消勾选,并相应地进入或退出编辑模式;如果不是编辑模式,则只是简单的勾选或取消勾选-->
+    <!--主逻辑其实就是这样,理清了这样一条线,再去写代码,思路会清晰很多-->
+
+    <!--全选时,要确定要操作哪个table的表格,当前页面结构简单,容易找到,但页面一旦有多个表格,就需要确定全选按钮对应的是哪个表格,所以要传入第二个参数tb-->
+
+    function CheckAll(mode, tb){
+        if($(mode).hasClass("editing")){
+            $(tb).children().each(function(){
+                <!--循环的当前行-->
+                var tr = $(this);
+                <!--找到当前行的checkbox tr->td->checkbox-->
+                var check_box = tr.children().first().find(":checkbox");
+                <!--当前行的checkbox已经选中就不做操作-->
+                if(check_box.prop("checked")){
+                }else{
+                    <!--没有选中,则勾上并进入编辑模式-->
+                    check_box.prop("checked",true);
+                    RowIntoEdit(tr);
+                }
+
+            })
+
+        }else{
+            $(tb).find(":checkbox").each(function(){
+                $(this).prop("checked",true);
+            });
+        }
+    }
+
+    function CheckReverse(mode, tb){
+        if($(mode).hasClass("editing")){
+            $(tb).children().each(function(){
+                var tr = $(this);
+                var check_box = tr.children().first().find(":checkbox");
+                if(check_box.prop("checked")){
+                    <!--选上的,则去掉勾选,并且退出编辑模式-->
+                    check_box.prop("checked",false);
+                    RowOutEdit(tr);
+                }else{
+                    <!--没有选中,则勾上并进入编辑模式-->
+                    check_box.prop("checked",true);
+                    RowIntoEdit(tr);
+                }
+            })
+        }else{
+            $(tb).children().find(":checkbox").each(function(){
+                if($(this).prop("checked") == true){
+                    $(this).prop("checked",false);
+                }else{
+                    $(this).prop("checked",true);
+                }
+            });
+        }
+    }
+
+    function CheckCancel(mode, tb){
+        <!--和CheckAll的逻辑其实是一致的-->
+        if($(mode).hasClass("editing")){
+            $(tb).children().each(function(){
+            var tr = $(this);
+            var check_box = tr.children().first().find(":checkbox");
+            if(check_box.prop("checked")){
+                check_box.prop("checked", false);
+                RowOutEdit(tr);
+            }else{
+                <!--没选当然就是什么也不做啦-->
+            }
+            })
+
+        }else{
+            <!--没有进入编辑模式的话,就直接将该表格下的所有checkbox取消勾选-->
+             $(tb).find(":checkbox").each(function(){
+                $(this).prop("checked",false);
+             });
+
+        }
+    }
+
+    function EditMode(arg, tb){
+        if($(arg).hasClass("editing")){
+           $(arg).removeClass("editing");
+           $(tb).children().each(function(){
+                var tr = $(this);
+                var check_box = tr.children().first().find(":checkbox");
+                if(check_box.prop("checked")){
+                    RowOutEdit(tr);
+                }else{
+
+                }
+        })
+        }else{
+           $(arg).addClass("editing");
+           $(tb).children().each(function(){
+                var tr = $(this);
+                var check_box = tr.children().first().find(":checkbox");
+                if(check_box.prop("checked")){
+                    RowIntoEdit(tr);
+                }else{
+
+                }
+        })
+
+                }
+
+
+    }
+
+
+    <!--为每个checkbox在加载页面完成后额外绑定一个事件-->
+    <!--是为了保证在编辑模式开启后,再去勾选checkbox可以使得当前行进入编辑模式-->
+    <!--checkbox原来的事件(点击后打勾)优先于我们给它绑定的事件-->
+    function BindSingleCheck(mode, tb){
+        $(tb).find(":checkbox").bind("click",function(){
+            var $tr = $(this).parent().parent();
+            <!--是否进入编辑模式-->
+            if($(mode).hasClass("editing")){
+                <!--是否原来已经选中-->
+                <!--如果选中,点击后先是默认绑定事件,变为false,退出编辑模式-->
+                <!--如果没有选中,点击后先是默认绑定时间,变为true,点击后进入编辑模式-->
+                <!--这里有个checkbox默认绑定事件优先的原则,所以乍看上去,似乎代码是和逻辑是相反的-->
+                if($(this).prop("checked")){
+                    alert(12);
+                    RowIntoEdit($tr);
+                }else{
+                    RowOutEdit($tr);
+                }
+            }else{
+            }
+        });
+    }
+    $(function(){
+        BindSingleCheck('#edit_mode', '#tb1');
+    })
+
+
+
+    window.globalCtrlKeyPress = false;
+    window.onkeydown = function(event){
+        if(event && event.keyCode == 17){
+            window.globalCtrlKeyPress = true;
+        }
+    };
+    window.onkeyip = function(event){
+        if(event && event.keyCode == 17){
+            window.globalCtrlKeyPress = false;
+        }
+    };
+    function MultiSelect(){
+        if(window.globalCtrlKeyPress){
+
+        }
+    }
+</script>
+</body>
+</html>

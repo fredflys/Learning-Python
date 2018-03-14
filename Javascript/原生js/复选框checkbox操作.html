@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>复选框操作</title>
+</head>
+<body>
+    textarea不是自闭和标签,默认值直接设置在标签中间,并没有value属性
+    但是在js中，用标签.value可以取到textarea的输入值
+    这属于特殊情况
+    <p><input id='i1' type="text" value="老来多健忘 唯不忘相思"/></p>
+    <p><input id='i2' type="password" value="aaaaaaaa"/></p>
+    <textarea id="i3">相见方恨晚 猝然悔相识</textarea>
+    <div id="i4">
+        <ul>
+            <li><input type="checkbox" value="1"/>泉眼无声惜细流 树荫照水爱情柔</li>
+            <li><input type="checkbox" value="2"/>我本将心向明月 奈何明月照沟渠</li>
+            <li><input type="checkbox" value="3"/>渐行渐远渐无书 水阔鱼沉何处问</li>
+        </ul>
+    </div>
+    <input type="button" value="全选" onclick="SelectAll();">
+    <input type="button" value="反选" onclick="SelectInvert();">
+    <input type="button" value="取消" onclick="UnselectAll();">
+    <div id="i5">
+        <ul>
+            <li><input type="checkbox" value="1"/>惟将终夜常开眼 报答平生未展眉</li>
+            <li><input type="checkbox" value="2"/>世间安得双全法 不负如来不负卿</li>
+            <li><input type="checkbox" value="3"/>十年情思百年渡 不斩相思不忍顾</li>
+        </ul>
+    </div>
+    <script>
+        //因为以下函数中都要取i4下的input标签，因此这里定义为全局变量
+        //因为是小程序所以才会这么做
+        //如果代码很多，最好还是在函数内定义，谨慎为妙
+        checks = document.getElementById('i4').getElementsByTagName('input');
+        function SelectAll(){
+            for(var i=0;i<checks.length;i++){
+                checks[i].checked = true;
+            }
+        }
+        function SelectInvert(){
+            for(var j=0;j<checks.length;j++){
+                //判断是双等号，因为忘了指点，调试这个函数还花了好几分钟
+                if(checks[j].checked==true){checks[j].checked=false;}
+                else{checks[j].checked=true;}
+            }
+        }
+        function UnselectAll(){
+            for(var k=0;k<checks.length;k++){
+                checks[k].checked = false;
+            }
+        }
+    </script>
+</body>
+</html>

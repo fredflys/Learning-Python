@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--所有的定位都是脱离了原来的文档层，就像一本书，以前所有类容都在同一页，而position之后，就可以放在不同层级的各页，z-index值越高，就在越上层，默认值相当于0;-->
+    <style>
+        body{
+            margin:0px;
+          }
+        .model{
+            position:fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            background-color:rgba(0,0,0,.5);
+            z-index:2;
+        }
+        .content{
+            height:300px;
+            width:400px;
+            position:fixed;
+            background-color:white;
+            top:50%;
+            left:50%;
+            z-index:3;
+            margin-left:-200px;
+            margin-top:-150px;
+        }
+    </style>
+</head>
+<body>
+    <div style="height:2000px;background-color:red;">
+        <h1>1</h1>
+    </div>
+    <div class="model"></div>
+    <div class="content"></div>
+</body>
+</html>

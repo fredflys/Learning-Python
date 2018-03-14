@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>返回顶部</title>
+    //href值若为空，则点击后会自动刷新
+    //document.body.scrollTop似乎在我这边无法取到值，一直都是0
+    //在网上查到的解决方法是用document.documentElement来代替.body
+    <style>
+        .go-top{
+            position:fixed;
+            right:28px;
+            bottom:19px;
+            height:40px;
+            width:40px;
+            border:1px solid black;
+            text-align:center;
+            cursor:pointer;
+        }
+        .hide{display:none;}
+    </style>
+</head>
+<body  onscroll="Scroll();">
+    <div style="height:2000px;">
+        <h2>终不似，少年游</h2>
+    </div>
+    <div id="i1" class="go-top hide">
+        <a onclick="Gotop();">返回顶部</a>
+    </div>
+<script>
+    function Gotop(){
+        document.documentElement.scrollTop = 0;
+    }
+    function Scroll(){
+        var top = document.documentElement.scrollTop;
+        var i1 = document.getElementById('i1');
+        if(top>50){
+            i1.classList.remove('hide');
+        }else{
+            i1.classList.add('hide');
+        }
+    }
+</script>
+</body>
+</html>

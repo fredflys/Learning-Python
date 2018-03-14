@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c{background-color:red;}
+        .c .item{border:1px solid yellow;width:50px;float:left;height:70px;backgroung-color:green;}
+        .c:after{content:"111";clear:both;}
+        #test:before{content:"在前面添加的内容  ";}
+        #test:after{content:"  在后面添加的内容";}
+        #test{border:2px solid blue;height:20px;}
+
+<!--其实添加的内容是以标签的形式存在的，只不过标签被隐藏了-->
+    </style>
+</head>
+<body>
+    <div class="c">
+        <div class="item">第一行</div>
+        <div class="item">第二行</div>
+
+    </div>
+    <div id="test" >测试</div>
+</body
+</html>

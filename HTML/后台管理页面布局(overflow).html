@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理布局</title>
+    <!-- 让body体抵住边框 -->
+    <!--左边抵住左边块的右边框，右边值设置为0，就会拉升到屏幕边缘-->
+    <style>
+        body{
+            margin:0px;
+        }
+        .pg-header{
+            height:48px;
+            background-color:#dddddd;
+            bottom-down:0px;
+        }
+        .pg-body .body-menu{
+            position:absolute;
+            width:180px;
+            background-color: antiquewhite;
+            left:0px;
+
+        }
+        .pg-body .body-content{
+            position:absolute;
+            background-color:royalblue;
+            left:180px;
+            right:0px;
+            top:48px;
+            bottom:0px;
+            overflow:auto;
+        }
+    </style>
+</head>
+<body>
+    <!--各个块之间该各占多大？【应当左右都抵到边框上】-->
+    <!--百分比？ 页面特别大的话，菜单太大，应该只占几百像素-->
+    <!--min/max-width?-->
+    <!--在外层定义一个大的div，在内部进行分配？-->
+    <!--fixed 和 absolute：左块左边距离左边缘x像素，右块左边距左边缘x+1像素-->
+
+    <!--让标题块在滚动时固定在页面顶部-->
+    <div class="pg-header"></div>
+    <div class="pg-body">
+        <div class="body-menu">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+        <div class="body-content">
+            <h1>a</h1>
+            <h2>b</h2>
+            <h3>c</h3>
+            <h4>d</h4>
+            <h1>a</h1>
+            <h2>b</h2>
+            <h3>c</h3>
+            <h4>d</h4>
+            <h1>a</h1>
+            <h2>b</h2>
+            <h3>c</h3>
+            <h4>d</h4>
+            <h1>a</h1>
+            <h2>b</h2>
+            <h3>c</h3>
+            <h4>d</h4>
+            <h1>a</h1>
+            <h2>b</h2>
+            <h3>c</h3>
+            <h4>d</h4>
+        </div>
+    </div>
+
+</body>
+</html>

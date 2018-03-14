@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        CSS代码
+    </style>
+
+    解释器从上向下执行，因此js代码最好放在HTML body体的底部
+    为了让访问更顺畅，用户应当首先看到内容，其次再加载各类动态效果
+</head>
+<body>
+    <input type="text" id="user" />
+    <input type="button" value="点我" onclick="GetData();"/>
+    <script>
+        function GetData(){
+            var i = document.getElementById('user');
+            alert(i.value);
+        }
+    </script>
+</body>
+</html>

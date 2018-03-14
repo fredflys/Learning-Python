@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    *{margin:0;padding:0}
+
+    .outer{
+        width:640px;
+        height:360px;
+        border:dashed cadetblue 5px;
+        margin:0 auto;
+        position:relative;
+    }
+    .outer .img li{
+        list-style:none;
+        position:absolute;
+        left:0;
+        top:0;
+    }
+    .outer .num{
+        list-style:none;
+        position:absolute;
+        left;0;
+        bottom:10px;
+        font-size:10px;
+        text-align:center;
+        width:100%;
+        <!--ul是一个块级标签，其内部的li是其文本内容，如果使其文本居中，那li们就会居中-->
+        <!--这时ul脱离了文档流，并不知道宽度是多少，因此需要给其加上宽度，-->
+        <!--配合num的文字居中，就可以将li们拖到中间，否则居中就是无效的，-->
+        <!--因为它不加宽度，宽度就是文本的宽度，自然无所谓中不中间-->
+    }
+    .num li{
+        height:20px;
+        width:20px;
+        background-color:darkgrey;
+        border-radius:60%;
+        text-align:center;
+        line-height:20px;
+        display:inline-block;
+        font-size:15px;
+        cursor:pointer;
+    }
+    .button{
+        height:50px;
+        width:25px;
+        background-color:darkgrey;
+        position:absolute;
+        top:50%;
+        margin-top:-25px;
+        opacity:0.5;
+        font-size:30px;
+        font-weight:bolder;
+        text-align:center;
+        line-height:45px;
+        cursor:pointer;
+    }
+    .btn_right{
+        right:0px;
+    }
+    .hide{
+        display:none;
+    }
+    .outer:hover .button{
+        display:block;
+    }
+    #current{
+        background-color:red;
+    }
+</style>
+<body>
+    <div class="outer">
+        <ul class="img">
+            <li><img src="images/1.jpg" height="360px" width="640px"/></li>
+            <li><img src="images/12.jpg" height="360px" width="640px"/></li>
+            <li><img src="images/3.jpg"  height="360px" width="640px"/></li>
+            <li><img src="images/4.jpg"  height="360px" width="640px"/></li>
+            <li><img src="images/5.jpg"  height="360px" width="640px"/></li>
+            <li><img src="images/6.jpg"  height="360px" width="640px"/></li>
+        </ul>
+        <ul class="num">
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+        <div class="btn_left button hide"> < </div>
+        <div class="btn_right button hide"> > </div>
+    </div>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        <!--要实现的效果：-->
+        <!--1.点击左右按钮时上一张或下一站图片出现-->
+        <!--2.鼠标不悬停时，图片自动轮播；悬停时，锁定当前图片-->
+        <!--3.点击下方按钮时，对应图片出现-->
+        $(".num li").first().attr("id","current");
+
+        <!--鼠标悬停时，数字背景变红，并切换对应图片-->
+        $(".num li").mouseover(function(){
+        <!--可以这样往后续，因为每一个方法返回的都是元素或元素集-->
+        $(this).attr("id","current").siblings().removeAttr("id");
+        var index = $(this).index();
+        <!--这里加上了i=index是为了解决轮播和悬停间切换图片不连贯的问题-->
+        <!--加上i=index后,每次悬停动作都会使得轮播从当前悬浮位置重新开始轮播-->
+        i = index;
+        $(".img li").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+        });
+
+        <!--轮播图-->
+        <!--这里是初始化页面开始后的轮播，将i设置为0，一旦悬停开始，就为i重新赋值-->
+        i = 0;
+        function move(){
+            i++;
+            if(i==6){i = 0;}
+            $(".num li").eq(i).attr("id","current").siblings().removeAttr("id");
+            $(".img li").eq(i).fadeIn(1000).siblings().fadeOut(1000);
+        }
+        timer = setInterval(move,1500);
+
+        <!--悬浮则停止轮播效果-->
+        $(".outer").hover(function(){
+            clearInterval(timer);
+        },function(){
+            timer = setInterval(move,1500);
+        });
+
+        <!--左右切换按钮效果-->
+        <!--其实左右切换和轮播效果是一致的，区别在于轮播是时间驱动的，而切换则是手动点击的，-->
+        <!--因此右切换只需要执行move方法就可以了-->
+        <!--而左切换同理，不过是将i向回拨一下罢了，但因为move方法首先会将i做递增，因此需要向回再多拨一下-->
+       $(".btn_right").click(move);
+       $(".btn_left").click(function(){
+            <!--这里有个小问题：如果到了第一幅图片，i再减2会变成负数，因此这里加一个判断，如果i=0，也就是到了第一幅图片的话，将i设置为6，这样减去2后是4，进入move后再递增一次就是5，也就是到了最后一副图片-->
+            <!--当然在move方法中添加对i的判断也是可以的，我第一次想到的方法就是这样-->
+            if(i==0){i = 6;};
+            i = i-2;
+            move();});
+
+    })
+
+
+</script>
+</body>
+</html>

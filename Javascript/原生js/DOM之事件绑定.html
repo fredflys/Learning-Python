@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件绑定</title>
+</head>
+<body>
+    <!--onmouseleave也可以替换成onmouseout-->
+    <div onmouseover="Func(this);" onmouseleave="Func2(this);">变色</div>
+    <!--event代表触发当前标签的事件内容-->
+    <input type="text" onkeydown="Down(this,event);"/>
+
+
+    <!--这里给a标签新绑定了事件，会先执行自定义事件，然后执行默认事件-->
+    <a href="https://www.baidu.com/" onclick="Click();">跳转到百度</a>
+    <!--这里给onclick绑定的语句是返回一个函数的返回值，如果该函数返回值设为false，则事件执行后会停止，不再执行默认事件；为true，则会继续执行-->
+    <a href="https://www.sogou.com/" onclick="return Nohref();">点击后不跳转</a>
+
+
+
+    <!--返回自定义事件常用于登陆功能，确认用户用户名和密码都已经输入，不至于提交空表单，例子如下-->
+    <div>
+        <form action="http://store.steampowered.com">
+            账号<input type="text"/>
+            密码<input type="password"/>
+            <input type="submit" value="登陆" onclick="return SubmitForm(this);"/>
+        </form>
+    </div>
+<script>
+
+
+
+
+    function Func(arg){
+        arg.style.color = 'red';
+    }
+    function Func2(arg){
+        arg.style.color = 'black';
+    }
+    function Down(arg,e){
+        console.log(e.keyCode);
+    }
+
+    function Click(){
+        alert('点我会跳转');
+    }
+    function Nohref(){
+        alert('我不跳转');
+        return true;
+    }
+
+    function SubmitForm(arg){
+        var inputs = arg.parentElement.children;
+        for(var i=0;i<inputs.length-1;i++){
+            if(inputs[i].value.trim().length == 0){
+                alert('请输入登陆信息');
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

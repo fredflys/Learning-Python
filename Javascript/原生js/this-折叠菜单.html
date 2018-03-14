@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>折叠菜单</title>
+    <style>
+        .hide{
+            display:none;
+        }
+        .content ul{
+            list-style:none;
+        }
+        .menu{
+            width:400px;
+            border:2px solid black;
+            background-color:yellow;
+           }
+        .content ul{
+            margin:0;
+            padding:0;
+        }
+        .item{
+            border:1px black solid;
+            width:400px;
+        }
+        .menu .title{
+            background-color:orange;
+            cursor:pointer;
+            text-align:center;
+        }
+        .menu .content{
+            text-align:center;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <div class="item">
+            <div class="title" onclick="show(this);">离思</div>
+            <div class="content hide">
+                <ul>
+                    <li>曾经沧海难为水</li>
+                    <li>除却巫山不是云</li>
+                    <li>取次花丛懒回顾</li>
+                    <li>半缘修道半缘君</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="show(this);">秋风词</div>
+            <div class="content hide">
+                <ul>
+                    <li>秋风清，秋月明,</li>
+                    <li>落叶聚还散,寒鸦栖复惊</li>
+                    <li>相亲相见知何日</li>
+                    <li>此时此夜难为情</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item">
+            <div class="title" onclick="show(this);">鹧鸪天</div>
+            <div class="content hide">
+                <ul>
+                    <li>彩袖殷勤捧玉钟。当年拚却醉颜红</li>
+                    <li>舞低杨柳楼心月，歌尽桃花扇影风</li>
+                    <li>从别后，忆相逢。几回魂梦与君同</li>
+                    <li>今宵剩把银红照，犹恐相逢是梦中</li>
+                </ul>
+            </div>
+        </div>
+<script>
+    //方法就是将当前节点的同族content节点的hide class去掉，并且给其它item的content节点加上hide类名
+    function show(arg){
+        //将当前节点的兄弟节点content的hide类名去掉
+        arg.nextElementSibling.classList.remove('hide');
+        //获得当前节点的祖父节点的子节点，即由items的数组
+        menu_nodes = arg.parentElement.parentElement.children
+        //遍历items数组
+        for(var i=0;i<menu_nodes.length;i++){
+            //取得当前item
+            var current_node = menu_nodes[i];
+            //如果当前item是点击的item则跳过
+            if (current_node == arg.parentElement) {}
+            else{
+                //如果当前item的第二个儿子是undefined则跳过
+                //注意这里undefined没有加引号，不是字符串
+                //另外也可以用类型判断，typeof返回的是一个字符串，因此要加引号，这样写：
+                //typeof(current_node.children[1]) == 'undefined'
+                //我也不清楚为什么会有undefined这个儿子，只是调试时遇到里才设置了这个条件
+                if(current_node.children[1] == undefined){}
+                else{
+                    //如果当前item的第二个儿子的类名中已经有hide，那就跳过，不用加了
+                    if(current_node.children[1].classList.contains('hide')){}
+                    else{
+                        //这时才会加上hide属性
+                        //其实没有这么判断，粗暴地加hide类名也是能运行的，只是console里有报错，给以后留下隐患
+                        current_node.children[1].classList.add('hide');
+                    }
+                }
+            }
+
+        }
+    }
+
+</script>
+</body>
+</html>

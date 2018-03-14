@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .c{background-color:red;}
+        .c .item{border:1px solid yellow;width:50px;float:left;}
+    </style>
+</head>
+<body>
+    <div class="c">
+        <div class="item">第一行</div>
+        <div class="item">第二行</div>
+        <div class="item">        高度计算的问题，此问题会引发兼容性问题
+
+当块元素的高度是默认或者auto时，W3C 在可视化格式模型中规定了高度的计算细节，其中有一条就是：如果元素包含浮动元素，那么浮动元素不参与高度计算。
+
+lz的 A 元素都是浮动元素时，包含它们的元素的高度会被计算成0，因此背景色不出现，而lz你在去掉float的时候会出现背景色。</div>
+    </div>
+</body
+</html>

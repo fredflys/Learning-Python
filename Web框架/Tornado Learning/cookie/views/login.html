@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/login" method="post">
+        <input type="text" name="username"/>
+        <input type="text" name="password"/>
+        <input type="checkbox" name="auto" value="1" >7天免登陆
+        <input type="submit" value="登陆"/>
+        <span style="color:red;">{{ status_text }}</span>
+    </form>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drawer</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        a, body, button{
+            margin:0;
+            padding:0;
+            word-wrap:break-word;
+            work-break:break-all;
+        }
+        a{text-decoration:none;}
+        .head-band{
+            top:0;
+            left:0;
+            z-index:1000;
+            width:100%;
+            position:fixed;
+            height:44px;
+            background-color:#2459a2;
+        }
+        .head-content{
+            width:1016px;
+            margin:0 auto;
+            line-height:44px;
+            position:relative;
+        }
+        .head-band, .head-content{
+            height:44px;
+            background-color:#2459a2;
+        }
+        .digg-top{
+            float:left;
+            width:121px;
+            height:400px;
+            background-image:url('images/logo.png');
+            background-repeat:no-repeat;
+            margin-top:11px;
+            background-origin:initial;
+            margin-left:-120px;
+
+        }
+        .action-menu{
+            float:left;
+        }
+        .action-menu a.tb{
+            color:#c0cddf;
+            padding:0 13px 0 16px;
+            margin-left:-3px;
+            display:inline-block;
+        }
+        .main-content-band{
+            clear:both;
+            background-color:#ededed;
+            padding-top:44px;
+        }
+        .main-content{
+            width:960px;
+            margin:0 auto;
+            overflow:hidden;
+            height:auto !important;
+            min-height:713px;
+            padding:6px 28px 60px;
+            background-color:#fff;
+        }
+        .content-L{
+            width:630px;
+            overflow:hidden;
+            margin-top:3px;
+            float:left;
+
+        }
+        .nav-top-area{
+            overflow:hidden;
+            clear:both;
+        }
+        .child-nav a{
+            display:inline-block;
+            width:60px;
+            height:26px;
+            margin-top:3px;
+            margin-bottom:13px;
+            font-size:12px;
+            font-weight:700;
+            text-align:center;
+        }
+        .child-nav, .sort-nav{
+            float:left;
+        }
+        .sort-nav .active{
+            color:#b4b4b4;
+        }
+        .sort-nav a{
+            margin-left:10px;
+            color:#300;
+            text-align:center;
+        }
+
+        .publish-btn{
+            background-color:#84a42b;
+            border:1px solid #8aab30;
+            color:#fff;
+            display:inline-block;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            width:80px;
+            float:right;
+            font-size:14px;
+        }
+        .publish-btn .n1{
+            height:12px;
+            width:11px;
+            background-position:0 -184px;
+            display:inline-block;
+        }
+    </style>
+</head>
+
+<body>
+        <div class="head-band">
+            <div class="head-content">
+                <a href="/" class="digg-top"></a>
+                <!--导航-->
+                <div class="action-menu">
+                    <a href="" class="tb active">全部</a>
+                    <a href="" class="tb">42区</a>
+                    <a href="" class="tb">段子</a>
+                    <a href="" class="tb">图片</a>
+                    <a href="" class="tb">挨踢1024</a>
+                    <a href="" class="tb">你问我答</a>
+                </div>
+             </div>
+        </div>
+        <div class="main-content-band">
+            <div class="main-content">
+                <div class="content-L">
+                    <!--最新最热按钮-->
+                    <div class="nav-top-area" style="margin-bottom:0;">
+                        <div class="child-nav">
+                            <a href="http://dig.chouti.com/all/hot/recent/1" hidefocus="false"
+                            class="hotbtn active icons" id="hotts-nav-btn">最热</a>
+                            <a href="http://dig.chouti.com/all/recommend" hidefocus="false"
+                               class="newbtn" id="newest-nav-btn">发现</a>
+                            <a href="http://dig.chouti.com/all/man/1" hidefocus="false"
+                               class="personbtn" id="person-nav-btn">人类发布</a>
+                        </div>
+                        <div class="sort-nav">
+                            <a href="http://dig.chouti.com/all/hot/recent/1" hidefocus="false"
+                               class="active hotbtn" id="sort-nav-btn">即时排序</a>
+                            <a href="http://dig.chouti.com/all/hot/24hr/1" hidefocus="false"
+                               class="newbtn" id="sort24-nav-btn">24小时</a>
+                            <a href="http://dig.chouti.com/all/hot/72hr/1" hidefocus="false"
+                               class="newbtn" id="sort3-nav-btn">3天</a>
+                        </div>
+                        <a href="javascript:;" class="publish-btn" id="publishBtn" lang="all">
+                            <span class="ico n1">+</span>
+                            <span class="n2">发布</span>
+                        </a>
+                    </div>
+                    <!--内容显示区域-->
+                    <div class="yellow-comment-msg-box" id="yellow-msg-box-intohot"></div>
+                    <div class="content-list" id="content-list"></div>
+                    <div class="no-bottom"></div>
+                    <div class="page-area" id="page-area"></div>
+                </div>
+                <div class="content-R">
+
+                </div>
+            </div>
+            <div class="footer-band" id="footer-band"></div>
+        </div>
+</body>
+</html>

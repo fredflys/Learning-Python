@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>image</title>
+    <style>
+        *{margin:0;padding:0}
+        .outer{
+            width:218px;
+            height:327px;
+            border:5px dashed blue;
+        }
+        .outer .small{
+            position:relative;
+        }
+        .outer .small .float{
+            height:100px;
+            width:100px;
+            background-color:grey;
+            opacity:0.4;
+            position:absolute;
+            display:none;
+        }
+        .outer .big{
+            position:absolute;
+            left:250px;
+            top:50px;
+            height:490.5px;
+            width:327px;
+            overflow:hidden;
+            border:1px solid purple;
+            display:none;
+        }
+        .outer .big img{
+            position:absolute;
+        }
+    </style>
+</head>
+<body>
+    <!--一大一小两张图片，大框内是图片在动，关键点是如何使得小图片中的指针和大框内的图片移动显示的是同一部份-->
+    <!--小盒子内有图片和随指针移动的面板-->
+    <!--面板设置为绝对定位，默认的left和top属性相对位置是body，其相对的位置应该是小盒子-->
+    <!--给大盒子开个小窗-->
+    <!--接下来就是怎么移动大盒子内图片的问题了-->
+    <div class="outer">
+        <div class="small">
+            <div class="float"></div>
+            <img src="images/small.png"/>
+        </div>
+        <div class="big">
+            <img src="images/big.jpg"/>
+        </div>
+    </div>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    <!--鼠标移入，面板和大盒子出现；移出则消失-->
+    $(".small").mouseover(function(){
+        $(".float").css("display","block");
+        $(".big").css("display","block");
+    })
+    $(".small").mouseout(function(){
+        $(".float").css("display","none");
+        $(".big").css("display","none");
+    })
+
+    $(".small").mousemove(function(e){
+       var _event = e || window.event;
+
+
+       <!--鼠标移动的x轴距离是鼠标横坐标减去一半的面板宽度-->
+       <!--其实就是面板的左边框相对于小盒子左边框的偏移，因为面板起始位置左边框/上边框是和小盒子左边框/上边框重合的-->
+
+       var small_height = $(".small").height();
+       var small_width = $(".small").width();
+       var float_height = $(".float").height();
+       var float_width = $(".float").width();
+       var float_height_half = $(".float").height() / 2;
+       var float_width_half = $(".float").width() / 2;
+       mouse_left = _event.clientX - float_width_half;
+       mouse_top = _event.clientY - float_height_half;
+
+       <!--面板左边框要是到了小盒子左边框外边，那就始终保持面板左边框和小盒子左边框重合-->
+       if(mouse_left < 0 ){
+            mouse_left = 0;
+       <!--面板右边框要是到了小盒子右边框外边，那就始终保持面板左边框向右偏移了小盒子宽度-面板宽度的距离-->
+       }else if(mouse_left > small_width - float_width){
+
+            mouse_left = small_width - float_width;
+       }
+       if(mouse_top< 0 ){
+            mouse_top = 0;
+       }else if(mouse_top > small_height - float_height){
+            mouse_top = small_height - float_height;
+       }
+       $(".float").css("left",mouse_left + "px");
+       $(".float").css("top",mouse_top + "px");
+
+
+       var percentX = ($(".big img").width() - $(".big").width())/(small_width-float_width);
+       var percentY = ($(".big img").height()-$(".big").height())/(small_height-float_height);
+       $(".big img").css("left", -percentX * mouse_left + "px");
+       $(".big img").css("top", -percentY * mouse_top + "px");
+
+
+    })
+</script>
+</body>
+</html>

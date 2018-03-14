@@ -1,0 +1,27 @@
+document.cookie -- 字符串
+		document.cookie.split(';')[number].splie('=')[0]\[1] -键和值
+		document.cookie = "k2=value2;path=/;domain=;secure="  -这就是往cookie中添加数据了，并添加属性
+		function SetCookie(name, value, expires){
+			// 注意这里的new，以当前时间生成新的时间对象，而不是Date()
+			var current_date = new Date();
+			current_date.set_seconds(current_date.getSeconds() + 180);
+			document.cookie = name + '=' + value + ";expires:" + current_date.toUTCString();
+ 		}
+		
+		jQurey Cookie Plugin 扩展插件
+		$.cookie('k1','v1')
+
+	服务端
+		self.cookies
+		self.set_cookie('key'， ， )
+		self.get_cookie('key')
+
+	cookie加密/签名过程[从客户端发出]
+		k, v
+		v1 = base64(v)
+		str = md5?(v1 + current_time + 自定义字符串（保存在服务端）)
+		v = v1|str|current_time
+
+		cookie验证过程[在服务端验证]
+		--验证值  从v中拿到v1的值
+		--验证合法性  md5?(v1 + 用户发来的时间戳 + 自定义字符串）

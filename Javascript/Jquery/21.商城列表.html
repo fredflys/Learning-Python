@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .header{
+        background-color:red;
+        color:white;
+        width:200px;
+        height:20px;
+        text-align:center;
+        cursor:pointer;
+    }
+    .left-menu{
+        height:448px;
+        width:200px;
+        color:#fff;
+        background-color:#6e6568;
+        padding:4px 0px;
+        display:inline-block;
+    }
+    ul{list-style:none;}
+    li{
+        padding:5px 0px;
+    }
+    .content{
+        position:fixed;
+        border:1px solid green;
+        left:206px;
+        top:7px;
+        height:476px;
+        width:500px;
+
+    }
+
+    .hide{
+        display:none;
+    }
+
+</style>
+<body>
+    <div class="header">全部商品分类</div>
+    <div class="left-menu hide">
+        <div float-content="one">手机/运营商/数码</div>
+        <div float-content="two">电脑/办公</div>
+        <div float-content="three">家居/家具/家装/厨具</div>
+    </div>
+    <div class="right-menu hide">
+        <div class="content" float-id="one">
+            <ul>
+                <li>1111111111</li>
+                <li>111111111</li>
+            </ul>
+        </div>
+
+        <div class="content" float-id="two">
+            <ul>
+                <li>22222222222</li>
+                <li>22222222222</li>
+            </ul>
+        </div>
+
+        <div class="content" float-id="three">
+            <ul>
+                <li>3333333333333</li>
+                <li>33333333333</li>
+            </ul>
+        </div>
+    </div>
+<script src="jquery-3.2.1.min.js"></script>
+<script>
+    <!--虽然自己写的方法很笨拙,但总算是完整实现了-->
+    <!--课程里的HTML结构和我的有很大不同,我也不愿去再研究了 就这样-->
+    <!--分析方法就是分阶段依个设定方法:-->
+    <!--头部菜单的悬停和移出效果-->
+    <!--左侧菜单及其子元素的悬停和移出效果-->
+    <!--右侧菜单及其子元素的悬停和移出效果-->
+    <!--之所以会分成菜单和其子元素,是因为要实现对应标签的出现和隐藏效果,这里也用到了-->
+    <!--通过自定义属性实现标签间的一一对应, 以及 字符串拼接确定find条件-->
+    $(function(){
+        change(".header", ".left-menu", ".right-menu");
+    })
+    function change(menuF, menuS, menuT){
+        $(menuF).bind("mouseover",function(){
+            $(menuS).removeClass("hide");
+            $(menuT).addClass("hide");
+        });
+        $(menuF).bind("mouseout",function(){
+            $(menuS).addClass("hide");
+        });
+
+        $(menuS).bind("mouseover",function(){
+           $(menuS).removeClass("hide");
+        });
+        $(menuS).bind("mouseout",function(){
+           $(menuS).addClass("hide");
+        });
+
+
+        $(menuS).children().bind("mouseover", function(){
+            <!--字符串拼接来定义对应标签的find条件-->
+           var cond = "[float-id=" + $(this).attr("float-content") + "]"
+           $(menuT).find(cond).each(function(){
+                <!--这里不知道为什么不能在find方法后加上[0]取出对应的右面标签,就只能这样用了下each循环-->
+                $(this).parent().removeClass("hide");
+                $(this).removeClass("hide");
+                $(this).siblings().addClass("hide");
+                })
+
+
+        })
+
+        $(menuS).children().bind("mouseout", function(){
+            $(menuS).addClass("hide");
+            $(menuT).children().addClass("hide");
+        })
+
+        $(menuT).children().bind("mouseover",function(){
+            $(menuS).removeClass("hide");
+            $(this).removeClass("hide");
+        })
+        $(menuT).children().bind("mouseout",function(){
+            $(menuS).addClass("hide");
+            $(this).addClass("hide");
+        })
+    }
+</script>
+</body>
+</html>
