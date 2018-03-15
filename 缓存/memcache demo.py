@@ -3,7 +3,7 @@
 # 在数据库存取相对较慢耗时很久
 # 将硬盘（数据库等）中最常用的数据，放入内存中预先开辟好的一部分区域
 # 从而实现高速存取，就是缓存
-# memcached -d -m 128 -p 2000 -u root -c 1024 -l 192.168.17.122 -P /tmp/memcached.pid -s /tmp/memcached.sock
+# memcached -d -m 128 -p 2000 -u root -c 1024 -l 192.168.17.122 -P /tmp/memcached.pid
 #  -d 设置为守护进程
 #  -m 设置内存大小(M)
 #  -p 设置监听端口

@@ -9,7 +9,7 @@ from email.utils import formataddr
 
 def email(email_list, content, subject="抽屉新热榜-用户注册"):
     msg = MIMEText(content, 'plain', 'utf-8')
-    msg['From'] = formataddr(["抽屉新热榜",'wptawy@126.com'])
+    msg['From'] = formataddr(["抽屉新热榜", 'wptawy@126.com'])
     msg['Subject'] = subject
 
     server = smtplib.SMTP("smtp.126.com", 25)

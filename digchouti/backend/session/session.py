@@ -77,17 +77,22 @@ class MemcachedSession:
 
         # 每一次有新的请求都更新过期时间
         MemcachedSession.mc.set(self.random_str, MemcachedSession.mc.get(self.random_str), config.SESSION_EXPIRES)
+
         expires_time = time.time() + config.SESSION_EXPIRES
         handler.set_cookie(MemcachedSession.session_id, self.random_str, expires=expires_time)
 
     def __getitem__(self, key):
-        ret = json.loads(MemcachedSession.mc.get(self.random_str)).get(key, None)
-        return ret
+        ret_dict = json.loads(MemcachedSession.mc.get(self.random_str))
+        return ret_dict.get(key, None)
 
     def __setitem__(self, key, value):
-        CacheSession.session_container[self.random_str][key] = value
+        ret_dict = json.loads(MemcachedSession.mc.get(self.random_str))
+        ret_dict[key] = value
+        MemcachedSession.mc.set(self.random_str, json.dumps(ret_dict), config.SESSION_EXPIRES)
 
     def __delitem__(self, key):
-        if key in CacheSession.session_container[self.random_str]:
-            del CacheSession.session_container[self.random_str][key]
+        ret_dict = json.loads(MemcachedSession.mc.get(self.random_str))
+        del ret_dict[key]
+        MemcachedSession.mc.set(self.random_str, json.dumps(ret_dict), config.SESSION_EXPIRES)
+
 
