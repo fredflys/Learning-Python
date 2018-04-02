@@ -24,6 +24,7 @@ class RegisterForm(BaseForm):
 
         super(RegisterForm, self).__init__()
 
+
 class LoginForm(BaseForm):
 
     def __init__(self):

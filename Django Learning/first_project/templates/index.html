@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="/static/js/jquery-2.1.4.min.js"></script>
+    <title>Index页面</title>
+</head>
+<body>
+    <form method="post"> {% csrf_token %}
+    用户名：<input type="text" name="username">
+    密码：<input type="password" name="password">
+    提交：<input type="submit" value="提交">
+    </form>
+    <table>
+        <thead>
+            <th>用户名</th>
+            <th>密码</th>
+        </thead>
+        <tbody>
+        {% for line in data%}
+                <tr>
+                    <td>{{ line.user }}</td>
+                    <td>{{ line.pwd }}</td>
+                </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

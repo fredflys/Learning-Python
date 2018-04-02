@@ -15,6 +15,7 @@ class CheckCodeHandler(tornado.web.RequestHandler):
         print(mstream.getvalue())
         self.write(mstream.getvalue())
 
+
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('index.html')

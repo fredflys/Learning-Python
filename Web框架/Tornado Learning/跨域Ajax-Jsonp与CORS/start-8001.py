@@ -6,6 +6,7 @@ import json
 class IndexHandler(tornado.web.RequestHandler):
     def get(self):
         self.render('index.html')
+        self.write
 
     def post(self):
         self.write('8001 Post')

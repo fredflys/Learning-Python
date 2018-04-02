@@ -55,16 +55,55 @@ class CacheSession:
 
 
 class RedisSession:
+    session_id = "__sessionId__"
+    import redis
+    import json
+    pool = redis.ConnectionPool(host='192.168.17.122', port=6379)
+    r = redis.Redis(connection_pool=pool)
+
     def __init__(self, handler):
-        pass
+        self.handler = handler
+        client_random_str = handler.get_cookie(RedisSession.session_id, None)
+        if client_random_str and RedisSession.r.exists(client_random_str):
+            self.random_str = client_random_str
+        else:
+            self.random_str = create_session_id()
+            RedisSession.r.hset(self.random_str, None, None)
+        RedisSession.r.expire(self.random_str, config.SESSION_EXPIRES)
+
+        expires_time = time.time() + config.SESSION_EXPIRES
+        handler.set_cookie(RedisSession.session_id, self.random_str, expires=expires_time)
+
+    def __getitem__(self, key):
+        bytes_ret = RedisSession.r.hget(self.random_str, key)
+        if bytes_ret:
+            try:
+                return json.loads(str(bytes_ret, encoding='utf-8'))
+            except json.decoder.JSONDecodeError:
+                return str(bytes_ret, encoding='utf-8')
+        else:
+            return None
+
+    def __setitem__(self, key, value):
+        # 直接以字典形式的值使用hset方法时，会自动转换成字符串写入
+        # 但变成字符串时会把字典内部的字符串加上单引号，形如"{'k1':'v1'}"
+        # 这样使用loads()时就会报错，字符串内部必须是双引号才可以不会出错
+        # 因此需要使用dumps()，显式地让json预处理为字符串再出传入
+        if isinstance(value, dict):
+            print('1234', type(value))
+            RedisSession.r.hset(self.random_str, key, json.dumps(value))
+        else:
+            RedisSession.r.hset(self.random_str, key, value)
+
+    def __delitem__(self, key):
+        RedisSession.r.hdel(self.random_str, key)
 
 
 class MemcachedSession:
-    session_id = "__sessionId__"
-    mc = memcache.Client(['192.168.17.122:2000'], debug=True, cache_cas=True)
+    session_id = create_session_id()
+    mc = memcache.Client(['192.168.17.122:12301'], debug=True, cache_cas=True)
 
     def __init__(self, handler):
-        import memcache
         self.handler = handler
         client_random_str = handler.get_cookie(MemcachedSession.session_id, None)
         # 客户端和服务端都存在

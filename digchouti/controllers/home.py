@@ -19,16 +19,40 @@ from backend.utils.response import StatusCodeEnum
 from sqlalchemy import and_, or_
 
 
-class IndexHandler(BaseRequestHandler):
-    def get(self, page=1):
+def redis_cache(func):
+    def wrapper(obj, *args, **kwargs):
+        import redis
+        pool = redis.ConnectionPool(host='192.168.17.122', port=6379)
+        r = redis.Redis(connection_pool=pool)
+        redis_cached_html = r.get('index')
+        if redis_cached_html:
+            obj.write(redis_cached_html)
+            return
+        ret = func(obj, *args, **kwargs)
+        r.set('index', obj._response_html, ex=30)
+        return ret
+    return wrapper
 
+
+class IndexHandler(BaseRequestHandler):
+    @redis_cache
+    def get(self, page=1):
         conn = ORM.session()
 
         all_count = conn.query(ORM.News).count()
 
         obj = Pagination(page, all_count)
+        # 从基于redis的session钟取得数据时，返回格式是bytes
+        # 因此会在__getitem__方法中，将其转换为str类型再返回
+        # 但在这里，如果用户预先没有登陆，那么下面一句返回的就是None，转换类型的话会出错
+        # 因此在转换为字符串时，需要判断其是否为None类型
+        # 另外还要注意self.session['user_info']虽然在存储时，存储的是字典
+        # 但从session取过来后是str类型的
 
-        current_user_id = self.session['user_info']['nid'] if self.session['is_login'] else 0
+        if self.session['is_login']:
+            current_user_id = self.session['user_info']['nid']
+        else:
+            current_user_id = 0
         result = conn.query(ORM.News.nid,
                             ORM.News.title,
                             ORM.News.url,

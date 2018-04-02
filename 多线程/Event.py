@@ -6,10 +6,11 @@ def do(event):
     event.wait()
     print('Execute')
 
-#创建一个事件对象
+
+# 创建一个事件对象
 event_obj = threading.Event()
 for i in range(10):
-    #讲事件对象传入函数，
+    # 将事件对象传入函数，
     t = threading.Thread(target=do,args=(event_obj,))
     t.start()
 

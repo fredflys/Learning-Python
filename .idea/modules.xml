@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Django Learning/Demo/.idea/Demo.iml" filepath="$PROJECT_DIR$/Django Learning/Demo/.idea/Demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Django Learning/.idea/Django Learning.iml" filepath="$PROJECT_DIR$/../Django Learning/.idea/Django Learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Learning-Python.iml" filepath="$PROJECT_DIR$/.idea/Learning-Python.iml" />
     </modules>
   </component>

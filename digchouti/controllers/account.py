@@ -24,13 +24,16 @@ class CheckCodeHandler(BaseRequestHandler):
 
 class LoginHandler(BaseRequestHandler):
     def post(self, *args, **kwargs):
-        # 　定义给前端的返回值对象
+        # 定义给前端的返回值对象
         rep = BaseResponse()
-        # 　声明登陆表单，每个表单内包含了预先定义的验证域
+        # 声明登陆表单，每个表单内包含了预先定义的验证域
         form = account.LoginForm()
         # 表单的valid()方法会遍历表单内所有的验证域，都满足的话才会返回True
         if form.valid(self):
             # 判断验证码
+            print(form._value_dict['code'])
+            print(self.session["CheckCode"])
+            print(self.session["CheckCode"])
             if form._value_dict['code'].lower() != self.session["CheckCode"].lower():
                 rep.message = {'code': '验证码错误'}
                 self.write(json.dumps(rep.__dict__))
@@ -55,6 +58,13 @@ class LoginHandler(BaseRequestHandler):
                 self.write(json.dumps(rep.__dict__))
                 return
             # 数据库中有匹配的信息，则将用户登陆状态及用户信息存入session，并写给前端状态码
+            # 这里ORM连接的__dict__属性返回的字典中有个键是'_sa_instance_state'
+            # 其值是一个sqlalchemy对象
+            # 我们自定义session时，__setitem__方法会进行要设置值是否是字典的判断
+            # 如果是字典的话，会对value使用dumps方法，而json并不知道如何转换sqlalchemy对象
+            # 这个错误排查了有一会儿才确定怎么回事
+            # 话说我为什么要把obj.__dict__写入session？里面有敏感信息
+            # 而且也没什么用
             self.session['is_login'] = True
             self.session['user_info'] = obj.__dict__
             rep.status = True

@@ -101,8 +101,8 @@ def create_validate_code(size=(120, 30),
               0.001,
               float(random.randint(1, 2)) / 500
               ]
-    img = img.transform(size, Image.PERSPECTIVE, params) # 创建扭曲
+    img = img.transform(size, Image.PERSPECTIVE, params)  # 创建扭曲
 
-    img = img.filter(ImageFilter.EDGE_ENHANCE_MORE) # 滤镜，边界加强（阈值更大）
+    img = img.filter(ImageFilter.EDGE_ENHANCE_MORE)  # 滤镜，边界加强（阈值更大）
 
     return img, strs
