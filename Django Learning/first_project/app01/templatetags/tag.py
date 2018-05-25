@@ -1,6 +1,6 @@
 from django import template
 from django.utils.safestring import mark_safe
-from django.template.base import Node, TemplateSyntaxError,
+from django.template.base import Node, TemplateSyntaxError
 
 register = template.Library()
 

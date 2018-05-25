@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    .input-group{
+        padding: 15px;
+    }
+    .input-group input{
+        width: 200px;
+    }
+    .input-group span{
+        display: inline-block;
+        position: relative;
+        border: 1px solid red;
+        top: 25px;
+        left: -211px;
+    }
+
+    </style>
+</head>
+<body>
+    <form action="/form/" method="post">
+        <div class="input-group">
+            <div style="float:left;width:70px;">用户名：</div>
+            {{ myform.user }}
+            {% if errors.user.0 %}
+            <span>{{ errors.user.0 }}</span>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <div style="float:left;width:70px;">密码：</div>
+            {{ myform.pwd }}
+            {% if errors.pwd.0 %}
+            <span>{{ errors.pwd.0 }}</span>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <div style="float:left;width:70px;">邮箱：</div>
+            {{ myform.email }}
+            {% if errors.email.0 %}
+            <span>{{ errors.email.0 }}</span>
+            {% endif %}
+        </div>
+        <div class="input-group">
+            <div style="float:left;width:70px;">评论：</div>
+            {{ myform.comment }}
+            {% if errors.comment.0 %}
+            <span>{{ errors.comment.0 }}</span>
+            {% endif %}
+        </div>
+
+        </div>
+            <div class="input-group">
+            <div style="float:left;width:70px;">种类：</div>
+            {{ myform.book_type }}
+            {% if errors.book_type.0 %}
+            <span>{{ errors.book_type.0 }}</span>
+            {% endif %}
+        </div>
+
+        </div>
+            <div class="input-group">
+            <div style="float:left;width:70px;">号码：</div>
+            {{ myform.mobile }}
+            {% if errors.mobile.0 %}
+            <span>{{ errors.mobile.0 }}</span>
+            {% endif %}
+        </div>
+        <div>
+            <input style="float:left;margin-left:15px;" type="submit" value="提交"/>
+        </div>
+    </form>
+</body>
+</html>

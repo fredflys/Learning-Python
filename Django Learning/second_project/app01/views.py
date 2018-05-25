@@ -14,7 +14,7 @@ def index(request):
     """
 
     # user_info_dict = {
-    #     'user': 'yeff', 'email': 'xxx@126.com',
+    #     'user': 'john', 'email': 'yy@q.com',
     #     'pwd': '123456', 'user_type': models.UserType.objects.get(nid=1)
     # }
     # models.UserInfo.objects.create(**user_info_dict)
@@ -32,7 +32,7 @@ def index(request):
 
     # 取出所有用户类型是管理员的用户,并显示其用户名和用户类型信息
     ret = models.UserInfo.objects.filter(user_type__caption='管理员').values('user', 'user_type__caption')
-    print(ret)
+    # print(ret)
     # for item in ret:
     #     print(item.id, item.user_type_id, item.user_type.caption)
     # ret2 = models.UserType.objects.all().values('nid')
@@ -44,9 +44,18 @@ def index(request):
     # models.UserInfo.objects.create(**user_info_dict1)
 
 
-    # 反向查询
-    # .表名_set.all()
-    obj = models.UserInfo.objects.filter(caption='管理员').first()
-    print(obj.userinfo_set.all())
+    # 正向查找  由信息表定位到外键表  多对一  真实存在的字段
+    # 反向查询  由外键表追踪到信息表  一对多  隐含的字段
+    # .关联表名_set.all()
+    obj = models.UserType.objects.filter(caption='管理员').first()
+    print(obj.userinfo_set.all())  #
+    print('----')
+    # 外键表__外键字段
+    # values中用的是字符串
+    obj2 = models.UserType.objects.all().values('nid', 'userinfo__user')
+    print(obj2)
 
+    for item in models.Userinfo.objects.all():
+        item.id
+        item.外键表.外键字段
     return HttpResponse('OK')

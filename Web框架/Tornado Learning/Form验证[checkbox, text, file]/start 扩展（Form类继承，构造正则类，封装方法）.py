@@ -162,7 +162,7 @@ class BaseForm:
             # 这样可以将不同的验证规则封装到不同的类中
             regObj.validate(key, user_value)
             # 验证信息封装在regObj中
-            if regObj.is_valid:
+                if regObj.is_valid:
                 success_dict[key] = regObj.value
                 regObj.save(files_obj)
             else:

@@ -1,8 +1,18 @@
 # 快速排序
 # 1.基于递归
 # 2.找到轴值，小于的放在左边，大于的放在右边
+# 不稳定
+# nlog2n
+"""
+不再将无需序列视作两部分
+直接找每个元素在有序序列中的位置
+确定第一个元素的位置，以一个low游标和high游标分别指向第1个元素和最后一个元素
+两个游标迎头移动，右侧先行（因为low从元素本身的下标开始）， low游标确保经过元素都比第一个元素小，high游标确保经过元素都比第一个元素大
+不符合则停下，放到另一侧游标所指的位置，直到两个游标碰面，
+最后则该位置就是第一个元素应该在的位置，将第一个元素交换到这里
+再对元素左右两侧的子列表应用同一方法
 
-
+"""
 def quick_sort(l):
     def sort(listx, left, right):
         if left >= right:
@@ -73,4 +83,46 @@ def partition(alist, first, last):
     alist[first] = alist[rightmark]
     alist[rightmark] = temp
     return rightmark
+
+
+# 又一种实现
+def quick_sort_another(alist, first, last):
+    if first >= last:
+        return
+    mid_value = alist[first]
+    low = first
+    high = last
+    while low < high:
+        # high游标左移
+        # 将相等元素都放在一边处理更好
+        # while low < high and alist[high] >= mid_value:
+        #     high -= 1
+        # alist[low] = alist[high]
+        # low += 1
+        # # low游标右移
+        # while low < high and alist[low] < mid_value:
+        #     low += 1
+        # alist[high] = alist[low]
+        # high -= 1
+
+        # 保证移动的条件都是在low < high的条件下进行的
+        # low和碰面时的位置不会被错过
+        while low < high and alist[high] >= mid_value:
+            high -= 1
+        alist[low] = alist[high]
+
+        while low < high and alist[low] < mid_value:
+            low += 1
+        alist[high] = alist[low]
+    # 循环退出时low和high相等
+    alist[low] = mid_value
+    # quick_sort_another(alist[:low-1])
+    # quick_sort_another(alist[low+1:])
+    quick_sort_another(alist, first, low-1)
+    quick_sort_another(alist, low+1, last)
+
+l = [10, 3, 5, 7, 8, 2, 4, 6, 1]
+quick_sort_another(l, 0, len(l)-1)
+print(l)
+
 

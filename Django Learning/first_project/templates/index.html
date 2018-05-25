@@ -6,24 +6,113 @@
     <title>Index页面</title>
 </head>
 <body>
-    <form method="post"> {% csrf_token %}
-    用户名：<input type="text" name="username">
-    密码：<input type="password" name="password">
-    提交：<input type="submit" value="提交">
-    </form>
-    <table>
-        <thead>
-            <th>用户名</th>
-            <th>密码</th>
-        </thead>
-        <tbody>
-        {% for line in data%}
-                <tr>
-                    <td>{{ line.user }}</td>
-                    <td>{{ line.pwd }}</td>
-                </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <!--搜索框-->
+    <div class="condition">
+        <div class="item ">
+            <!--点击后会添加一个搜索框-->
+            <div class='icon' onclick="AddCondition(this);">+</div>
+            <div>
+                <!--选择不同的搜索条件时，会触发方法-->
+                <select onchange="ChangeName(this);">
+                    <option value="name">书名</option>
+                    <option value="book_type__caption">类型</option>
+                    <option value="price">价格</option>
+                </select>
+            </div>
+            <div class="left"><input type="text" name="name"/></div>
+        </div>
+    </div>
+    <div>
+        <!--点击触发搜索，向后端传递-->
+        <input type="button" onclick="Search();" value="搜索">
+    </div>
+    <!--展示区-->
+    <div class="container">
+
+    </div>
 </body>
+<script>
+    function AddCondition(ths){
+        // dom对象转换为jquery对象
+        var new_tag = $(ths).parent().clone();
+        // 新添加的搜索框的按钮改为减号，定义删除方法
+        new_tag.find('.icon').text('-');
+        new_tag.find('.icon').attr('onclick','RemoveCondition(this);');
+        $(ths).parent().append(new_tag);
+    }
+
+    // 新添加的搜索框还可删除
+    function RemoveCondition(ths){
+        $(ths).parent().remove();
+    }
+
+    //
+    function ChangeName(tag){
+        // 获取搜索条件value属性的值
+        var v = $(tag).val();
+        // 定义input的name属性
+        // 这里主要是为了随着用户选择不同的搜索条件
+        // 也向后端传递不同的搜索条件，Q搜索中会用到
+        $(tag).parent().next().find('input').attr('name', v);
+    }
+
+    function Search(){
+        // 获取所有用户输入的内容并提交
+        // 将要给后端传递的字典
+        var post_data_dict = {};
+        // 循环所有的input
+        $('.condition input').each(
+            function(){
+               // 操作jquery对象
+               // 获得搜索条件
+               var attr_name = $(this).attr('name');
+               // 获取用户输入
+               var value_list = $(this).val().split('，');
+               post_data_dict[attr_name] = value_list;
+            }
+        );
+        // 将要传递的字典序列化
+        var post_data_str = JSON.stringify(post_data_dict);
+        $.ajax({
+            url: '/index/',
+            type: 'POST',
+            data: {'post_data': post_data_str},
+            // 此参数使得后端传来的json会被解析为js对象
+            dataType: "json",
+            success: function(ret){
+                if(ret.status){
+                    // 清空展示柜，避免重复显示
+                    $('.container').empty();
+                    // {'status':true, 'content': [{},{}]}
+                    $.each(ret.content, function(useless_key, value_dict){
+                        // 有多少条数据就有多少个表
+                        // 形式为一表一行n列
+                        var table = document.createElement('table');
+                        // 每个表有一行数据
+                        var tr = document.createElement('tr');
+                        // {'name':'xx', 'pages':540}
+                        $.each(value_dict, function(key, val){
+                            // 书籍信息的每一项内容对应一列 td
+                            var td = document.createElement('td');
+                            // 为td标签加上class属性，值为其键
+                            td.setAttribute('class', key);
+                            // 为td标签加上文本， 即其值
+                            td.innerText = val;
+                            td.setAttribute('width', 100);
+                            // 每次创建一个td标签都添加到tr上
+                            tr.appendChild(td);
+                        });
+                        // 将tr标签加入table中
+                        table.appendChild(tr);
+                        table.setAttribute('border', 1);
+                        // 将table加入展示柜中
+                        $('.container').append(table);
+                    });
+                }else{
+                    alert(ret.message);
+                }
+            }
+        })
+    }
+</script>
 </html>

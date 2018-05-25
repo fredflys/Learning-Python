@@ -20,5 +20,6 @@ def wrapped():
     """这个是被修饰的函数？"""
     print('wrapped')
 
+
 print(wrapped.__doc__)  # 可以看到被修饰函数的doc属性已被替代
 print(wrapped.__name__)  # 函数的name属性也被替代

@@ -1,3 +1,4 @@
+# 稳定
 def bubble_sort(lst):
     count = 0
     for i in range(len(lst)-1):

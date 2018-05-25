@@ -23,5 +23,6 @@ import app01.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path(r'index/', include('app01.urls')),
+    path(r'form/', app01.views.form)
 ]
 
