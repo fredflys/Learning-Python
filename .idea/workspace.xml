@@ -14,31 +14,53 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="basic opener.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/basic opener.py">
+      <file leaf-file-name="urlib2 http request.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 http request.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+            <state relative-caret-position="459">
+              <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="auth.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/auth.py">
+      <file leaf-file-name="example tieba.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/basics/example tieba.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+            <state relative-caret-position="459">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cookiejar.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="urlib2 basics.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 basics.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="example translator.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/basics/example translator.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2222">
+              <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+              <folding>
+                <element signature="e#353#379#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cookiejar.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="315">
+              <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
               <folding>
                 <element signature="e#306#332#0" expanded="true" />
               </folding>
@@ -58,23 +80,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lxml - tieba spider.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lxml - tieba spider.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba spider.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4005">
-              <caret line="89" column="14" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="exe.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/exe.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="857">
+              <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -107,16 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="client.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python36/Lib/http/client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="183">
-              <caret line="1063" column="0" lean-forward="false" selection-start-line="1063" selection-start-column="0" selection-end-line="1063" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -167,7 +167,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/算法/单向循环链表.py" />
         <option value="$PROJECT_DIR$/算法/双向链表.py" />
         <option value="$PROJECT_DIR$/算法/队列.py" />
         <option value="$PROJECT_DIR$/算法/1.冒泡排序.py" />
@@ -218,6 +217,7 @@
         <option value="$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba pictures.py" />
         <option value="$PROJECT_DIR$/爬虫/urllib and xml/exe.py" />
         <option value="$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba spider.py" />
+        <option value="$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py" />
       </list>
     </option>
   </component>
@@ -338,7 +338,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.lxml - tieba spider">
+  <component name="RunManager" selected="Python.example translator">
     <configuration name="111" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -408,6 +408,23 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
+    <configuration name="example translator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/basics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Learning-Python" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/basics/example translator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
     <configuration name="exe" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -426,23 +443,6 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <configuration name="lxml - tieba pictures (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/urllib and xml" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\urllib and xml\lxml - tieba spider.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-    </configuration>
-    <configuration name="lxml - tieba pictures" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -528,19 +528,19 @@
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.lxml - tieba pictures" />
-      <item index="1" class="java.lang.String" itemvalue="Python.xml - tieba pictures" />
-      <item index="2" class="java.lang.String" itemvalue="Python.lxml - tieba pictures (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.exe" />
-      <item index="4" class="java.lang.String" itemvalue="Python.lxml - tieba spider" />
+      <item index="0" class="java.lang.String" itemvalue="Python.xml - tieba pictures" />
+      <item index="1" class="java.lang.String" itemvalue="Python.lxml - tieba pictures (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.exe" />
+      <item index="3" class="java.lang.String" itemvalue="Python.lxml - tieba spider" />
+      <item index="4" class="java.lang.String" itemvalue="Python.example translator" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.lxml - tieba spider" />
-        <item index="1" class="java.lang.String" itemvalue="Python.exe" />
-        <item index="2" class="java.lang.String" itemvalue="Python.lxml - tieba pictures (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.xml - tieba pictures" />
-        <item index="4" class="java.lang.String" itemvalue="Python.lxml - tieba pictures" />
+        <item index="0" class="java.lang.String" itemvalue="Python.example translator" />
+        <item index="1" class="java.lang.String" itemvalue="Python.lxml - tieba spider" />
+        <item index="2" class="java.lang.String" itemvalue="Python.exe" />
+        <item index="3" class="java.lang.String" itemvalue="Python.lxml - tieba pictures (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.xml - tieba pictures" />
       </list>
     </recent_temporary>
   </component>
@@ -867,45 +867,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/example tieba.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1485">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/example translator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2835">
-          <caret line="66" column="4" lean-forward="false" selection-start-line="66" selection-start-column="4" selection-end-line="66" selection-end-column="4" />
-          <folding>
-            <element signature="e#353#379#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 basics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/爬虫/basics/example login.py" />
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 http request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python36/Lib/urllib/request.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6750">
@@ -979,16 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="24" selection-end-column="1" />
-          <folding>
-            <element signature="e#306#332#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/xml/etree/etree.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1013,16 +965,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/exe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/regular expression.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -1033,12 +975,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba spider.py">
+    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/exe.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4005">
-          <caret line="89" column="14" lean-forward="false" selection-start-line="89" selection-start-column="14" selection-end-line="89" selection-end-column="14" />
+        <state relative-caret-position="248">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/example translator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2222">
+          <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+          <folding>
+            <element signature="e#353#379#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/example tieba.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 basics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 http request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="857">
+          <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+          <folding>
+            <element signature="e#306#332#0" expanded="true" />
           </folding>
         </state>
       </provider>

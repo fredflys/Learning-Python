@@ -17,7 +17,7 @@ from http import cookiejar
 from fake_useragent import UserAgent
 
 # 准备request对象
-login_info = {"email": "xyf220@126.com", "password": "x9zv4vemj7"}
+login_info = {"email": "xyf220@126.com", "password": "xxxxx"}
 encoded_info = parse.urlencode(login_info)
 ua = UserAgent()
 headers = {

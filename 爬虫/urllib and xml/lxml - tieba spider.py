@@ -36,7 +36,7 @@ def parse_main_html(html):
 def get_post_html(post_label):
     """
     :param post_label: 主题帖的后缀
-    :return: 返回要处理的主题帖地址（单页或多页）的列表
+    :return: 返回要处理的主题帖地址的列表
     """
     # 对每一个主题帖创建一个列表，如有多页，则列表中会有多个元素
     post_html_list = []
@@ -58,7 +58,7 @@ def get_post_html(post_label):
 def parse_post_html(post_html):
     """
     :param post_html: 主题帖特定页的地址
-    :return:  打印当前页内的帖子作者与帖子内容（纯文本）
+    :return:  打印当前页内每一层的帖子作者与帖子内容（纯文本）
     """
     response = request.urlopen(post_html)
     html = str(response.read(), encoding='utf-8')
