@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py" description="from fake_useragent import UserAgent" line="16" />
+    <bookmark url="file://$APPLICATION_CONFIG_DIR$/scratches/s.py" description="def chinese(data):&#10;    count = 0&#10;    for s in data..." line="35" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f8d28c-b813-4bb8-b99e-7c5c6adaafab" name="Default" comment="" />
+    <list default="true" id="15f8d28c-b813-4bb8-b99e-7c5c6adaafab" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/douban.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/爬虫/urllib and xml/exe.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,77 +22,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="urlib2 http request.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 http request.py">
+      <file leaf-file-name="douban.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/douban.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="example tieba.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/basics/example tieba.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urlib2 basics.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 basics.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="example translator.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/basics/example translator.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2222">
-              <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
+            <state relative-caret-position="392">
+              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding>
-                <element signature="e#353#379#0" expanded="true" />
+                <element signature="e#0#20#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cookiejar.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py">
+      <file leaf-file-name="get_proxies.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/get_proxies.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-              <folding>
-                <element signature="e#306#332#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="regular expression.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/regular expression.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lxml - tieba spider.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba spider.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="857">
-              <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+            <state relative-caret-position="259">
+              <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -92,31 +46,85 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="etree.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xml/etree/etree.py">
+      <file leaf-file-name="middlewares.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/middlewares.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="45">
+              <caret line="60" column="6" lean-forward="false" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
+              <folding>
+                <element signature="e#169#195#0" expanded="true" />
+                <element signature="e#361#2023#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/items.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="xml相关操作.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xml/xml相关操作.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="3" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="xml_sample" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/xml/xml_sample">
+      <file leaf-file-name="memcache cache_cas 1.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/缓存/memcache cache_cas 1.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="71" selection-end-column="1" />
+              <folding>
+                <element signature="e#425#467#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="captcha.jpg" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/captcha-images/captcha.jpg">
+          <provider selected="true" editor-type-id="images">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python36/Lib/site-packages/scrapy/spiders/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="86" column="19" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Python36/Lib/site-packages/scrapy/http/request/__init__.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3204">
+              <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -128,19 +136,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Python Unit Test" />
         <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>code</find>
-      <find>session</find>
-      <find>dumps</find>
-      <find>result</find>
-      <find>user_info</find>
-      <find>user_info_dict</find>
-      <find>template</find>
       <find>dirs</find>
       <find>STATICFILEs</find>
       <find>app</find>
@@ -156,6 +158,21 @@
       <find>我</find>
       <find>clearfix</find>
       <find>j_thread_list</find>
+      <find>concurr</find>
+      <find>robots</find>
+      <find>DOWNLOAD_DE</find>
+      <find>pip</find>
+      <find>downl</find>
+      <find>Robt</find>
+      <find>user</find>
+      <find>pipl</find>
+      <find>header</find>
+      <find>PIPELINE</find>
+      <find>download</find>
+      <find>downloader</find>
+      <find>dep</find>
+      <find>君</find>
+      <find>pipe</find>
     </findStrings>
     <dirStrings>
       <dir>C:\Users\xyf22\PycharmProjects\Learning-Python</dir>
@@ -167,64 +184,64 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/算法/双向链表.py" />
-        <option value="$PROJECT_DIR$/算法/队列.py" />
-        <option value="$PROJECT_DIR$/算法/1.冒泡排序.py" />
-        <option value="$PROJECT_DIR$/算法/希尔排序（插入排序的改进版）.py" />
-        <option value="$PROJECT_DIR$/算法/希尔排序.py" />
-        <option value="$PROJECT_DIR$/算法/4.插入排序.py" />
-        <option value="$PROJECT_DIR$/算法/3.选择排序.py" />
-        <option value="$PROJECT_DIR$/算法/2.快速排序..py" />
-        <option value="$PROJECT_DIR$/算法/6.归并排序.py" />
-        <option value="$PROJECT_DIR$/算法/5.希尔排序.py" />
-        <option value="$PROJECT_DIR$/算法/树.py" />
-        <option value="$PROJECT_DIR$/算法/Fibonacci.py" />
-        <option value="$PROJECT_DIR$/高阶函数/Recursive Example.py" />
-        <option value="$PROJECT_DIR$/高阶函数/Recursion to Iteration.py" />
-        <option value="$PROJECT_DIR$/高阶函数/functools.wraps.py" />
-        <option value="$PROJECT_DIR$/高阶函数/Mutual Recursion.py" />
-        <option value="$PROJECT_DIR$/高阶函数/Recusion Example.py" />
-        <option value="$PROJECT_DIR$/高阶函数/Return Statement.py" />
-        <option value="$PROJECT_DIR$/高阶函数/Recursion and Iteration.py" />
-        <option value="$PROJECT_DIR$/高阶函数/Save Function Status.py" />
-        <option value="$PROJECT_DIR$/高阶函数/Tree Recursion.py" />
-        <option value="$PROJECT_DIR$/CS61A/最大公约数.py" />
-        <option value="$PROJECT_DIR$/CS61A/Fibonacci.py" />
-        <option value="$PROJECT_DIR$/CS61A/Currying.py" />
-        <option value="$PROJECT_DIR$/CS61A/Tree Recursion.py" />
-        <option value="$PROJECT_DIR$/CS61A/Recursion and Iteration.py" />
-        <option value="$PROJECT_DIR$/CS61A/Decorators.py" />
-        <option value="$PROJECT_DIR$/CS61A/Data Abstraction.py" />
-        <option value="$PROJECT_DIR$/爬虫/urlib2库.py" />
-        <option value="$PROJECT_DIR$/爬虫/urlib2使用.py" />
-        <option value="$PROJECT_DIR$/爬虫/urlib2 http request.py" />
-        <option value="$PROJECT_DIR$/爬虫/example tieba.py" />
-        <option value="$PROJECT_DIR$/爬虫/get and post.py" />
-        <option value="$PROJECT_DIR$/爬虫/example post to youdao.py" />
-        <option value="$APPLICATION_CONFIG_DIR$/scratches/111.py" />
-        <option value="$PROJECT_DIR$/爬虫/example douban.py" />
-        <option value="$PROJECT_DIR$/爬虫/example baidu.py" />
-        <option value="$PROJECT_DIR$/爬虫/example login.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/opener.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/proxy opener.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/password manager.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/auth.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/cookielib.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/re.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/lxml.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/regular expression.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/xml - tieba pictures.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba pictures.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/exe.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba spider.py" />
-        <option value="$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py" />
+        <option value="$APPLICATION_CONFIG_DIR$/scratches/s.py" />
+        <option value="$PROJECT_DIR$/爬虫/beautifulsoup, multi-thread and selenium/live info.txt" />
+        <option value="$PROJECT_DIR$/爬虫/beautifulsoup, multi-thread and selenium/selenium douyu.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/spiders/lovecia_spider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/lovecia.html" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/spiders/loveciaspider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/start.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/items.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/settings.py" />
+        <option value="$PROJECT_DIR$/爬虫/multi-thread and selenium/selenium douyu.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/commons.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/pipelines.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/spiders/tencent_position_spider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/spiders/tencent_positions_spider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/start.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/items.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/pipelines.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/settings.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/commons.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider/spiders/pixabayspider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/start.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider/start.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider/settings.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider/items.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider/pipelines.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_crawlspider/tencent_crawlspider/items.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_crawlspider/tencent_crawlspider/start.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_crawlspider/tencent_crawlspider/settings.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_crawlspider/tencent_crawlspider/pipelines.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_crawlspider/tencent_crawlspider/spiders/crawlspider_version.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/items.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/pipelines.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/spiders/tencentspider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider/spiders/imagespider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/spiders/yousuuspider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/tencent_positions.log" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/settings.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/spiders/crawl_spider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/settings.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/items.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/start.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/items.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/pipelines.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/set_ip_pool.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/middlewares.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/start.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/spiders/affairs_spider.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/start.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/settings.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/douban.py" />
+        <option value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/get_proxies.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1102" />
-    <option name="width" value="808" />
-    <option name="height" value="1042" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="950" />
+    <option name="width" value="980" />
+    <option name="height" value="1030" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -260,7 +277,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -271,29 +287,49 @@
             <path>
               <item name="Learning-Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Learning-Python" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Learning-Python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Learning-Python" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
-              <item name="etree" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Learning-Python" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Learning-Python" type="462c0819:PsiDirectoryNode" />
               <item name="爬虫" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Learning-Python" type="b2602c69:ProjectViewProjectNode" />
               <item name="Learning-Python" type="462c0819:PsiDirectoryNode" />
               <item name="爬虫" type="462c0819:PsiDirectoryNode" />
-              <item name="urllib and xml" type="462c0819:PsiDirectoryNode" />
+              <item name="basics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Learning-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Learning-Python" type="462c0819:PsiDirectoryNode" />
+              <item name="爬虫" type="462c0819:PsiDirectoryNode" />
+              <item name="scrapy projects" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Learning-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Learning-Python" type="462c0819:PsiDirectoryNode" />
+              <item name="爬虫" type="462c0819:PsiDirectoryNode" />
+              <item name="scrapy projects" type="462c0819:PsiDirectoryNode" />
+              <item name="douban_mongodb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Learning-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Learning-Python" type="462c0819:PsiDirectoryNode" />
+              <item name="爬虫" type="462c0819:PsiDirectoryNode" />
+              <item name="scrapy projects" type="462c0819:PsiDirectoryNode" />
+              <item name="douban_mongodb" type="462c0819:PsiDirectoryNode" />
+              <item name="douban_mongodb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Learning-Python" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Learning-Python" type="462c0819:PsiDirectoryNode" />
+              <item name="爬虫" type="462c0819:PsiDirectoryNode" />
+              <item name="scrapy projects" type="462c0819:PsiDirectoryNode" />
+              <item name="douban_mongodb" type="462c0819:PsiDirectoryNode" />
+              <item name="douban_mongodb" type="462c0819:PsiDirectoryNode" />
+              <item name="spiders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches">
         <subPane>
           <expand>
@@ -308,20 +344,22 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Django Learning/Demo" />
+    <property name="settings.editor.selected.configurable" value="preferences.mongoOptions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/start.py" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\scrapy projects\douban_mongodb\douban_mongodb\spiders" />
+      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\scrapy projects\crawl_spider\crawl_spider" />
+      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\scrapy projects\tencent_crawlspider\tencent_crawlspider" />
+      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\scrapy projects\tencent_positions" />
       <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\CS61A" />
-      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\多线程" />
-      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\Django Learning\tutorial" />
-      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\Django Learning\first_project\static" />
-      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\scrapy projects\imagespider\imagespider" />
+      <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\scrapy projects\tencent_positions\tencent_positions" />
       <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\basics" />
       <recent name="C:\Users\xyf22\PycharmProjects\Learning-Python\CS61A" />
     </key>
@@ -338,7 +376,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.example translator">
+  <component name="RunManager" selected="Python.start (1)">
     <configuration name="111" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -373,88 +411,70 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="Doctest count_change" type="tests" factoryName="Doctests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CS61A" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CS61A/Tree Recursion.py" />
-      <option name="CLASS_NAME" value="" />
-      <option name="METHOD_NAME" value="count_change" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_FUNCTION" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-    </configuration>
-    <configuration name="example login" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="citizen_affairs crawl spider" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/example login.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/start.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="example translator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="first spider start." type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/basics" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/basics/example translator.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/start.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="exe" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="get_proxies" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/urllib and xml" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/urllib and xml/exe.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/get_proxies.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="lxml - tieba pictures (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="image spider" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/urllib and xml" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="SDK_HOME" value="C:\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\urllib and xml\lxml - tieba spider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider/start.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -476,71 +496,127 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="opener" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="set_ip_pool" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/urllib and xml" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\urllib and xml\basic opener.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\scrapy projects\douban_mongodb\douban_mongodb\get_proxies.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="request" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="start (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="C:/Python36/Lib/urllib" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="C:/Python36/Lib/urllib/request.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/start.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="xml - tieba pictures" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="start (2)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/urllib and xml" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Learning-Python" />
-      <option name="SCRIPT_NAME" value="C:\Users\xyf22\PycharmProjects\Learning-Python\爬虫\urllib and xml\lxml - tieba spider.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/start.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.xml - tieba pictures" />
-      <item index="1" class="java.lang.String" itemvalue="Python.lxml - tieba pictures (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.exe" />
-      <item index="3" class="java.lang.String" itemvalue="Python.lxml - tieba spider" />
-      <item index="4" class="java.lang.String" itemvalue="Python.example translator" />
+    <configuration name="start" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Learning-Python" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/start.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="tencent crawl version" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Learning-Python" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/start.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <configuration name="tencent positions spider" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Python36\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Learning-Python" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/start.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+    </configuration>
+    <list size="10">
+      <item index="0" class="java.lang.String" itemvalue="Python.first spider start." />
+      <item index="1" class="java.lang.String" itemvalue="Python.tencent positions spider" />
+      <item index="2" class="java.lang.String" itemvalue="Python.image spider" />
+      <item index="3" class="java.lang.String" itemvalue="Python.tencent crawl version" />
+      <item index="4" class="java.lang.String" itemvalue="Python.citizen_affairs crawl spider" />
+      <item index="5" class="java.lang.String" itemvalue="Python.start" />
+      <item index="6" class="java.lang.String" itemvalue="Python.start (1)" />
+      <item index="7" class="java.lang.String" itemvalue="Python.set_ip_pool" />
+      <item index="8" class="java.lang.String" itemvalue="Python.get_proxies" />
+      <item index="9" class="java.lang.String" itemvalue="Python.start (2)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.example translator" />
-        <item index="1" class="java.lang.String" itemvalue="Python.lxml - tieba spider" />
-        <item index="2" class="java.lang.String" itemvalue="Python.exe" />
-        <item index="3" class="java.lang.String" itemvalue="Python.lxml - tieba pictures (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.xml - tieba pictures" />
+        <item index="0" class="java.lang.String" itemvalue="Python.start (1)" />
+        <item index="1" class="java.lang.String" itemvalue="Python.start (2)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.get_proxies" />
+        <item index="3" class="java.lang.String" itemvalue="Python.set_ip_pool" />
+        <item index="4" class="java.lang.String" itemvalue="Python.start" />
       </list>
     </recent_temporary>
   </component>
@@ -599,23 +675,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-11" y="-11" width="1942" height="1042" extended-state="6" />
+    <frame x="-11" y="-11" width="1942" height="1042" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="DB Execution Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.50216216" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34606206" sideWeight="0.50431967" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293556" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297491" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30548927" sideWeight="0.49783784" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.019438446" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293556" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34606206" sideWeight="0.49568033" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.11231101" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293556" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2176026" sideWeight="0.7938808" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972972" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22192225" sideWeight="0.7938808" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293556" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24946004" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22378379" sideWeight="0.20611916" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.398568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0075593954" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05561555" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -623,7 +700,6 @@
       <window_info id="Graph Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.065945946" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Graph Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -637,319 +713,214 @@
           <url>file://$PROJECT_DIR$/digchouti/controllers/home.py</url>
           <line>2</line>
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/爬虫/multi-thread and selenium/mutil-thread.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/爬虫/multi-thread and selenium/qiushi.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="20" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/算法/6.归并排序.py">
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/items.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="6" column="7" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/5.希尔排序.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="810">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/4.插入排序.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2070">
-          <caret line="46" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="46" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/1.冒泡排序.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="5" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/socket demo/socketserver源码阅读.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/2.快速排序..py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5175">
-          <caret line="115" column="32" lean-forward="false" selection-start-line="115" selection-start-column="32" selection-end-line="115" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/高阶函数/functools.partial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/高阶函数/functools.update_wrapper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-379">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/队列.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/算法引入.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/栈的应用实例.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/树.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1620">
-          <caret line="36" column="8" lean-forward="false" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/算法/单链表.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/高阶函数/functools.wraps.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/最大公约数.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-810">
-          <caret line="51" column="9" lean-forward="false" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/ucb.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1215">
-          <caret line="17" column="23" lean-forward="false" selection-start-line="17" selection-start-column="23" selection-end-line="17" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Tree Recursion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7335">
-          <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Decorators.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Currying.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="21" column="17" lean-forward="false" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Data Abstraction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2295">
-          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Iteration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Mutual Recursion.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Recursion and Iteration.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="6" column="16" lean-forward="false" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Recusion Example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Return Statement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2340">
-          <caret line="52" column="13" lean-forward="false" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS61A/Save Function Status.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1305">
-          <caret line="29" column="35" lean-forward="false" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python36/Lib/urllib/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python36/Lib/site-packages/fake_useragent/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Python36/Lib/site-packages/fake_useragent/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6975">
-          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/scratches/111.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2925">
-          <caret line="65" column="28" lean-forward="false" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/example login.py" />
-    <entry file="file://C:/Python36/Lib/urllib/request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6750">
-          <caret line="762" column="0" lean-forward="true" selection-start-line="762" selection-start-column="0" selection-end-line="762" selection-end-column="0" />
-          <folding>
-            <element signature="e#5042#8690#0" expanded="false" />
-            <element signature="e#8850#10866#0" expanded="false" />
-            <element signature="e#8850#9455#1" expanded="false" />
-            <element signature="e#10890#11155#0" expanded="false" />
-            <element signature="e#11259#11617#0" expanded="false" />
-            <element signature="e#11639#15066#0" expanded="false" />
-            <element signature="e#15094#19747#0" expanded="false" />
-            <element signature="e#19950#21150#0" expanded="false" />
-            <element signature="e#21175#21704#0" expanded="false" />
-            <element signature="e#21750#22303#0" expanded="false" />
-            <element signature="e#22513#27263#0" expanded="false" />
-            <element signature="e#27295#28302#0" expanded="false" />
-            <element signature="e#28341#29997#0" expanded="false" />
-            <element signature="e#30027#32130#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/example douban.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding>
-            <element signature="e#58#84#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/proxy opener.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="765">
+          <caret line="17" column="25" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/example baidu.py">
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/spiders/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="7" selection-end-column="1" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python36/Lib/http/client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="1063" column="0" lean-forward="false" selection-start-line="1063" selection-start-column="0" selection-end-line="1063" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/auth.py">
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/imagespider/imagespider/spiders/imagespider.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="720">
-          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <caret line="17" column="46" lean-forward="false" selection-start-line="17" selection-start-column="46" selection-end-line="17" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/tencent_positions/tencent_positions/spiders/tencentspider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="6" column="38" lean-forward="false" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/first_spider/first_spider/spiders/yousuuspider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/tencent_positions">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163800">
+          <caret line="3640" column="0" lean-forward="false" selection-start-line="3640" selection-start-column="0" selection-end-line="3640" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/tencent_positions.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/spiders/crawl_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1125">
+          <caret line="29" column="25" lean-forward="false" selection-start-line="29" selection-start-column="25" selection-end-line="29" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="945">
+          <caret line="21" column="22" lean-forward="false" selection-start-line="21" selection-start-column="22" selection-end-line="21" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/crawl_spider/crawl_spider/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="2" column="11" lean-forward="false" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/scrapy.cfg">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/exe.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-56">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/basic opener.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="10" column="22" lean-forward="false" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xml/etree/etree.py">
+    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1347">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#306#332#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/proxy opener.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="12" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xml/xml_sample">
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/example tieba.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1721">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 basics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -957,84 +928,227 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/xml/xml相关操作.py">
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 http request.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="3" selection-end-column="27" />
+        <state relative-caret-position="180">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/example douban.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-990">
+          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/basics/example translator.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1890">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/auth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-371">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/regular expression.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="40" column="17" lean-forward="true" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
+        <state relative-caret-position="-810">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#9#0" expanded="true" />
+            <element signature="e#0#9#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/exe.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/example translator.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2222">
-          <caret line="64" column="23" lean-forward="false" selection-start-line="64" selection-start-column="23" selection-end-line="64" selection-end-column="23" />
-          <folding>
-            <element signature="e#353#379#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/example tieba.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 basics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/basics/urlib2 http request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="14" column="7" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/lxml - tieba spider.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="857">
-          <caret line="76" column="7" lean-forward="true" selection-start-line="76" selection-start-column="7" selection-end-line="76" selection-end-column="7" />
+        <state relative-caret-position="135">
+          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="15" selection-end-line="27" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#26#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/citizen_affairs/citizen_affairs/spiders/affairs_spider.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="36" column="33" lean-forward="false" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="db://[Connection]consoles\Connection">
+      <provider selected="true" editor-type-id="0.CONSOLE">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" current-schema="mysql" session-id="MAIN">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/start.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="1" column="17" lean-forward="false" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="21" column="43" lean-forward="true" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+          <folding>
+            <element signature="e#193#207#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/third_party/3/six/__init__.pyi">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2597">
+          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/scrapy/spiders/crawl.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-649">
+          <caret line="75" column="26" lean-forward="true" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/scrapy/core/engine.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="128" column="28" lean-forward="true" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/scrapy/spiders/init.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="8" column="11" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/captcha-images/captcha.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/scrapy/http/request/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3204">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Python36/Lib/site-packages/scrapy/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="86" column="19" lean-forward="false" selection-start-line="86" selection-start-column="19" selection-end-line="86" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/spiders/douban.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="71" selection-end-column="1" />
+          <folding>
+            <element signature="e#425#467#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/get_proxies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="11" column="9" lean-forward="false" selection-start-line="11" selection-start-column="9" selection-end-line="11" selection-end-column="9" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/爬虫/urllib and xml/cookiejar.py">
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="19" column="59" lean-forward="false" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        <state relative-caret-position="45">
+          <caret line="60" column="6" lean-forward="false" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
           <folding>
-            <element signature="e#306#332#0" expanded="true" />
+            <element signature="e#169#195#0" expanded="true" />
+            <element signature="e#361#2023#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/爬虫/scrapy projects/douban_mongodb/douban_mongodb/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="10" column="17" lean-forward="false" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/缓存/memcache cache_cas 1.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
