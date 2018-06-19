@@ -36,30 +36,30 @@ class TopMoviesSpider(CrawlSpider):
     # 从响应的登陆页面获取captcha-id，这是之后发送post请求时的必要参数之一
     def login_douban(self, response):
         # 获取captcha-id与验证码的图片地址
-        captcha_id = response.xpath('//input[@name="captcha-id"]/@value').extract()[0]
-        captcha_url = response.xpath('//img[@id="captcha_image"]/@src').extract()[0]
+        captcha_id = response.xpath('//input[@name="captcha-id"]/@value').extract()
 
-        captcha_path = ''
         # 准备基本的formdata
         formdata = {
             'source': 'None',
             'form_email': input('请输入账户名：'),
             'form_password': input('请输入密码：'),
-            'captcha-id': captcha_id,
             'login': '登录'
         }
-        # 有验证码图片地址则去下载验证码图片到本地
-        if captcha_url:
+        if captcha_id:
+            captcha_id = captcha_id[0]
+            captcha_url = response.xpath('//img[@id="captcha_image"]/@src').extract()[0]
+            # 有验证码图片地址则去下载验证码图片到本地
             captcha_path = os.path.dirname(os.path.dirname(__file__)) + '/captcha-images/captcha.jpg'
             urlretrieve(captcha_url, captcha_path)
-        # 确保验证码图片下载成功
-        try:
-            image = Image.open(captcha_path)
-            image.show()
-            captcha_solution = input('请输入验证码: ')
-            formdata['captcha-solution'] = captcha_solution
-        except FileNotFoundError:
-            pass
+            # 确保验证码图片下载成功
+            try:
+                image = Image.open(captcha_path)
+                image.show()
+                captcha_solution = input('请输入验证码: ')
+                formdata['captcha-id'] = captcha_id
+                formdata['captcha-solution'] = captcha_solution
+            except FileNotFoundError:
+                pass
         # 登陆完成后，携带cookie访问待爬取页面
         return scrapy.FormRequest.from_response(
             response,

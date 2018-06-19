@@ -6,7 +6,7 @@ import re
 
 
 # 产生代理连接池
-# 因为是免费代理，还需要预先判断代理是否可以使用
+# 因为是免费代理，极其不稳定
 # 尚未进行处理
 # 原本是为了应对豆瓣的封锁机制定义好的，后来使用了cookie进行模拟登陆
 # 也就没有再完善
@@ -43,5 +43,7 @@ def get_proxy_list():
         proxy_list.append(
             proxy(ip_list[i], port_list[i], type_list[i], get_time(endure_list[i]), get_time(last_check_list[i]))
         )
+    # 按照最后验证时间排序，将最有可能连接成功的放在前面
+    proxy_list.sort(key=lambda item: item.last_check)
     return proxy_list
 
